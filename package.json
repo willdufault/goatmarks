@@ -27,6 +27,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-node": "^3.0.0",
 		"@types/is-url": "^1.2.32"
 	}
 }
