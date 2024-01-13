@@ -4,7 +4,7 @@
 
   async function register() {
     const json = {
-      username: "cfyock",
+      username: "wduf",
       password: "password",
     };
     const body = JSON.stringify(json);

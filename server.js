@@ -2,18 +2,59 @@ import {
   handler
 } from './build/handler.js';
 import express from 'express';
+import mongoose from 'mongoose';
 
 const app = express();
 app.use(express.json());
 
+const url = "mongodb+srv://cfyock:YbV9fp3YOdlSn345@goatmarkscluster.g4szxnl.mongodb.net/?retryWrites=true&w=majority";
+mongoose.connect(url)
+
+const userList = new mongoose.Schema({
+  username: String,
+  password: String,
+  groups: [String],
+});
+
+const groupList = new mongoose.Schema({
+  code: String,
+  bookmarks: [{
+    name: String,
+    url: String,
+  }]
+});
+
+const user = mongoose.model('user', userList);
+const group = mongoose.model('group', groupList)
+
 // add a route that lives separately from the SvelteKit app
-app.post('/a', (req, res) => {
+app.post('/a', async (req, res) => {
   let data_string = req.body;
   console.log("This is the log in")
-  // console.log(req);
   console.log(data_string);
 
-  res.send(req.body);
+  let index = await user.find({
+    username: data_string["username"]
+  });
+
+  let new_user = new user({
+    username: data_string["username"],
+    password: data_string["password"],
+  })
+
+  try {
+    if (index.length === 0) {
+      console.log("Username does not exist")
+      await new_user.save();
+      res.send(true);
+    } else {
+      console.log("Username does exist")
+      res.send(false);
+    }
+  } catch (error) {
+    console.log("Ran into error in register")
+    res.status(500).send(error);
+  }
 });
 
 
@@ -42,36 +83,36 @@ app.listen(3000, () => {
 //   console.log('listening on port http://localhost:3000');
 // });
 
-// // const userList = new mongoose.Schema({
-// //   username: String,
-// //   password: String,
-// //   groups: [String],
-// // });
-// // const groupList = new mongoose.Schema({
-// //   code: String,
-// //   bookmarks: [{
-// //     name: String,
-// //     url: String,
-// //   }]
-// // });
+// const userList = new mongoose.Schema({
+//   username: String,
+//   password: String,
+//   groups: [String],
+// });
+// const groupList = new mongoose.Schema({
+//   code: String,
+//   bookmarks: [{
+//     name: String,
+//     url: String,
+//   }]
+// });
 
-// // const user = mongoose.model('user', userList);
-// // const group = mongoose.model('group', groupList)
+// const user = mongoose.model('user', userList);
+// const group = mongoose.model('group', groupList)
 
 // // add a route that lives separately from the SvelteKit app
 // app.post('/a', (req, res) => {
-//   // let data_string = req.body;
-//   // console.log("This is the log in")
-//   // console.log(data_string);
+// let data_string = req.body;
+// console.log("This is the log in")
+// console.log(data_string);
 
-//   // let index = await user.find({
-//   //   user: data_string["user"]
-//   // });
+// let index = await user.find({
+//   user: data_string["user"]
+// });
 
-//   // let new_user = new user({
-//   //   username: data_string["username"],
-//   //   password: data_string["password"],
-//   // })
+// let new_user = new user({
+//   username: data_string["username"],
+//   password: data_string["password"],
+// })
 
 //   res.end("This is an express route");
 // });
