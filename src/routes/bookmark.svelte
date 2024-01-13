@@ -1,13 +1,18 @@
 <!-- HTML. -->
 <main>
-	<div class='card'>
-		<div class="card-image p-3">
-			<figure class="image is-48x48">
-				<!-- svelte-ignore a11y-img-redundant-alt -->
-				<img src="{image_url}" alt="Image">
-			</figure>
+	<a href={url}>
+		<div class="card">
+			<div class="card-image p-3 is-flex is-justify-content-center">
+				<figure class="image is-48x48">
+					<!-- svelte-ignore a11y-img-redundant-alt -->
+					<img src="{image_url}" alt="Image">
+				</figure>
+			</div>
+			<div class="card-content is-flex is-justify-content-center py-0">
+				<h3>{name}</h3>
+			</div>
 		</div>
-	</div>
+	</a>
 </main>
 
 <!-- CSS. -->
