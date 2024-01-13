@@ -1,6 +1,7 @@
 <!-- HTML. -->
 <main>
-	<a href={url}>
+	<!-- Link to URL if active, otherwise do nothing. -->
+	<a href={active ? url : 'javascript:;'} class={active ? '' : 'cursor-move'}>
 		<div class="card py-4 has-background-bookmark-card">
 			<div class="card-image p-2 is-flex is-justify-content-center">
 				<figure class="image is-48x48">
@@ -19,11 +20,16 @@
 	.card {
 		border-radius: 30px;
 	}
+
+	.cursor-move {
+		cursor: move;
+	}
 </style>
 
 <!-- TypeScript. -->
 <script lang='ts'>
 	export let url: string;
 	export let name: string; 
+	export let active: boolean;
 	let image_url: string = 'http://logo.clearbit.com/' + url;
 </script>

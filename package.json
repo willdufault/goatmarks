@@ -28,6 +28,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@types/is-url": "^1.2.32"
+		"@types/is-url": "^1.2.32",
+		"muuri": "^0.9.5"
 	}
 }
