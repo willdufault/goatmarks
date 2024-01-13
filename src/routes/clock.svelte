@@ -1,6 +1,16 @@
 <!-- HTML. -->
 <main>
-	<div class='card'>{time}</div>
+	<div class='container is-flex is-justify-content-center p-5 borderify'>
+		<h1 class='title is-1 pr-2 mb-0'>{hours}:{minutes}</h1>
+		<div>
+			<div>
+				{seconds} {period}
+			</div>
+			<div>
+				{month} {day}
+			</div>
+		</div>
+	</div>
 </main>
 
 <!-- CSS. -->
@@ -8,28 +18,62 @@
 
 <!-- TypeScript. -->
 <script lang='ts'>
-	let time: string = '';
+	// Define variables.
+	let hours: number = 0; // How many hours.
+	let minutes: string = ''; // How many minutes.
+	let seconds: string = ''; // How many seconds.
+	let period: string = ''; // The period (am/pm).
+	let month: string = ''; // The current month.
+	let day: number = 0; // The current day.
+	let year: number = 0; // The current year.
+	let months: string[] = [ // List of zero-indexed months.
+		'Jan', 'Feb', 'Ma', 'Apr', 'May', 'Jun',
+		'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+	];
 
 	/*
-	Update the time variable to contain a string with the current time and period.
+	Left-pad minutes and seconds with a 0 if they are less than 10.
 	*/
-	function updateTime(): void {
+	function padMinutes(minutes: number): string {
+		return String(minutes).padStart(2, '0');
+	}
+
+	/*
+	Update the time and date.
+	*/
+	function updateTimeAndDate(): void {
 		// Define variables.
 		let now: Date = new Date(); // The time right now.
-		let hours: number = now.getHours(); // How many hours.
-		let minutes: number = now.getMinutes(); // How many minutes.
-		let period = hours <= 12 ? 'am' : 'pm' // The period right now (12-hour clock).
+		let h: number = now.getHours(); // How many hours.
+		let m: number = now.getMinutes(); // How many minutes.
+		let s: number = now.getSeconds(); // How many seconds.
+
+		// Update the period
+		period = h <= 12 ? 'am' : 'pm';
 
 		// If it is past noon, subtract 12 from the hours.
-		hours %= 12;
+		h %= 12;
+		
+		// Midnight hour.
+		if(h === 0) {
+			// We want it to display 12:00 not 0:00.
+			h = 12;
+		}
 
 		// Update the time.
-		time = `${String(hours)}:${String(minutes).padStart(2, '0')} ${period}`;
+		hours = h;
+		minutes = padMinutes(m);
+		seconds = padMinutes(s);
+
+		// Update the date.
+		day = now.getDate();
+		month = months[now.getMonth()];
+		year = now.getFullYear()
 	}
 
 	// Update the displayed time.
-	updateTime();
+	updateTimeAndDate();
 
 	// Update the time every second.
-	setInterval(updateTime, 1000);
+	setInterval(updateTimeAndDate, 1000);
 </script>
