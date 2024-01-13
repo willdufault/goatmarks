@@ -19,6 +19,7 @@
 	<img class="background-img" id="BL" src="./images/Background BL.svg" alt="beans">
 	<img class="background-img" id="TR" src="./images/Background TR.svg" alt="beans">
 	<img class="background-img" id="BR" src="./images/Background BR.svg" alt="beans">
+
 </main>
 	
 	<!-- CSS. -->
