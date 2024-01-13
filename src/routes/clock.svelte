@@ -1,6 +1,6 @@
 <!-- HTML. -->
 <main>
-	<div class='container is-flex is-justify-content-center is-align-items-center p-5 borderify'>
+	<div class='container is-flex is-justify-content-center is-align-items-center p-5'>
 		<h1 class='title is-1 pr-2 mb-0'>{hours}:{minutes}</h1>
 		<div>
 			<div>

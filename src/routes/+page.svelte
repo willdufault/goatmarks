@@ -4,11 +4,11 @@
 		<div class="container m-1 borderify">
 			<NavigationBar></NavigationBar>
 		</div>
-		<div class="columns m-1">
+		<div class="columns m-1 is-variable is-4">
 			<div class="column is-8 has-background-bookmark-container">
 				<Bookmarks></Bookmarks>
 			</div>
-			<div class="column is-4 borderify">
+			<div class="column is-4 has-background-bookmark-container is-flex is-justify-content-center is-align-items-center">
 				<Clock></Clock>
 			</div>
 		</div>
@@ -16,7 +16,12 @@
 </main>
 
 <!-- CSS. -->
-<style></style>
+<style>
+	.column {
+		background-clip: content-box;
+		border-radius: 50px;
+	}
+</style>
 
 <!-- TypeScript. -->
 <script lang='ts'>
