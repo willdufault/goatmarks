@@ -1,5 +1,7 @@
 <!-- HTML. -->
-<main></main>
+<main>
+	<div class='card'>{hours}:{minutes}</div>
+</main>
 
 <!-- CSS. -->
 <style></style>
