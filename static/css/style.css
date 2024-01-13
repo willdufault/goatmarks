@@ -1,3 +1,7 @@
 .borderify {
 	border: 5px solid red;
 }
+body{
+    background-color: #2F4858;
+    height: 100vh;
+}

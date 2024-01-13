@@ -1213,6 +1213,164 @@ a.box:active {
         background-color: #fcd4dc;
         border-color: transparent;
         color: #cc0f35; }
+  .button.is-bookmark-card {
+    background-color: rgba(217, 217, 217, 0.35);
+    border-color: transparent;
+    color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .button.is-bookmark-card:hover, .button.is-bookmark-card.is-hovered {
+      background-color: rgba(211, 211, 211, 0.35);
+      border-color: transparent;
+      color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .button.is-bookmark-card:focus, .button.is-bookmark-card.is-focused {
+      border-color: transparent;
+      color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+      .button.is-bookmark-card:focus:not(:active), .button.is-bookmark-card.is-focused:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(217, 217, 217, 0.25); }
+    .button.is-bookmark-card:active, .button.is-bookmark-card.is-active {
+      background-color: rgba(204, 204, 204, 0.35);
+      border-color: transparent;
+      color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .button.is-bookmark-card[disabled],
+    fieldset[disabled] .button.is-bookmark-card {
+      background-color: rgba(217, 217, 217, 0.35);
+      border-color: rgba(217, 217, 217, 0.35);
+      box-shadow: none; }
+    .button.is-bookmark-card.is-inverted {
+      background-color: findColorInvert(rgba(217, 217, 217, 0.35));
+      color: rgba(217, 217, 217, 0.35); }
+      .button.is-bookmark-card.is-inverted:hover, .button.is-bookmark-card.is-inverted.is-hovered {
+        background-color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+      .button.is-bookmark-card.is-inverted[disabled],
+      fieldset[disabled] .button.is-bookmark-card.is-inverted {
+        background-color: findColorInvert(rgba(217, 217, 217, 0.35));
+        border-color: transparent;
+        box-shadow: none;
+        color: rgba(217, 217, 217, 0.35); }
+    .button.is-bookmark-card.is-loading::after {
+      border-color: transparent transparent findColorInvert(rgba(217, 217, 217, 0.35)) findColorInvert(rgba(217, 217, 217, 0.35)) !important; }
+    .button.is-bookmark-card.is-outlined {
+      background-color: transparent;
+      border-color: rgba(217, 217, 217, 0.35);
+      color: rgba(217, 217, 217, 0.35); }
+      .button.is-bookmark-card.is-outlined:hover, .button.is-bookmark-card.is-outlined.is-hovered, .button.is-bookmark-card.is-outlined:focus, .button.is-bookmark-card.is-outlined.is-focused {
+        background-color: rgba(217, 217, 217, 0.35);
+        border-color: rgba(217, 217, 217, 0.35);
+        color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+      .button.is-bookmark-card.is-outlined.is-loading::after {
+        border-color: transparent transparent rgba(217, 217, 217, 0.35) rgba(217, 217, 217, 0.35) !important; }
+      .button.is-bookmark-card.is-outlined.is-loading:hover::after, .button.is-bookmark-card.is-outlined.is-loading.is-hovered::after, .button.is-bookmark-card.is-outlined.is-loading:focus::after, .button.is-bookmark-card.is-outlined.is-loading.is-focused::after {
+        border-color: transparent transparent findColorInvert(rgba(217, 217, 217, 0.35)) findColorInvert(rgba(217, 217, 217, 0.35)) !important; }
+      .button.is-bookmark-card.is-outlined[disabled],
+      fieldset[disabled] .button.is-bookmark-card.is-outlined {
+        background-color: transparent;
+        border-color: rgba(217, 217, 217, 0.35);
+        box-shadow: none;
+        color: rgba(217, 217, 217, 0.35); }
+    .button.is-bookmark-card.is-inverted.is-outlined {
+      background-color: transparent;
+      border-color: findColorInvert(rgba(217, 217, 217, 0.35));
+      color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+      .button.is-bookmark-card.is-inverted.is-outlined:hover, .button.is-bookmark-card.is-inverted.is-outlined.is-hovered, .button.is-bookmark-card.is-inverted.is-outlined:focus, .button.is-bookmark-card.is-inverted.is-outlined.is-focused {
+        background-color: findColorInvert(rgba(217, 217, 217, 0.35));
+        color: rgba(217, 217, 217, 0.35); }
+      .button.is-bookmark-card.is-inverted.is-outlined.is-loading:hover::after, .button.is-bookmark-card.is-inverted.is-outlined.is-loading.is-hovered::after, .button.is-bookmark-card.is-inverted.is-outlined.is-loading:focus::after, .button.is-bookmark-card.is-inverted.is-outlined.is-loading.is-focused::after {
+        border-color: transparent transparent rgba(217, 217, 217, 0.35) rgba(217, 217, 217, 0.35) !important; }
+      .button.is-bookmark-card.is-inverted.is-outlined[disabled],
+      fieldset[disabled] .button.is-bookmark-card.is-inverted.is-outlined {
+        background-color: transparent;
+        border-color: findColorInvert(rgba(217, 217, 217, 0.35));
+        box-shadow: none;
+        color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .button.is-bookmark-card.is-light {
+      background-color: rgba(245, 245, 245, 0.35);
+      color: rgba(74, 74, 74, 0.35); }
+      .button.is-bookmark-card.is-light:hover, .button.is-bookmark-card.is-light.is-hovered {
+        background-color: rgba(238, 238, 238, 0.35);
+        border-color: transparent;
+        color: rgba(74, 74, 74, 0.35); }
+      .button.is-bookmark-card.is-light:active, .button.is-bookmark-card.is-light.is-active {
+        background-color: rgba(232, 232, 232, 0.35);
+        border-color: transparent;
+        color: rgba(74, 74, 74, 0.35); }
+  .button.is-bookmark-container {
+    background-color: rgba(217, 217, 217, 0.1);
+    border-color: transparent;
+    color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .button.is-bookmark-container:hover, .button.is-bookmark-container.is-hovered {
+      background-color: rgba(211, 211, 211, 0.1);
+      border-color: transparent;
+      color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .button.is-bookmark-container:focus, .button.is-bookmark-container.is-focused {
+      border-color: transparent;
+      color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+      .button.is-bookmark-container:focus:not(:active), .button.is-bookmark-container.is-focused:not(:active) {
+        box-shadow: 0 0 0 0.125em rgba(217, 217, 217, 0.25); }
+    .button.is-bookmark-container:active, .button.is-bookmark-container.is-active {
+      background-color: rgba(204, 204, 204, 0.1);
+      border-color: transparent;
+      color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .button.is-bookmark-container[disabled],
+    fieldset[disabled] .button.is-bookmark-container {
+      background-color: rgba(217, 217, 217, 0.1);
+      border-color: rgba(217, 217, 217, 0.1);
+      box-shadow: none; }
+    .button.is-bookmark-container.is-inverted {
+      background-color: findColorInvert(rgba(217, 217, 217, 0.1));
+      color: rgba(217, 217, 217, 0.1); }
+      .button.is-bookmark-container.is-inverted:hover, .button.is-bookmark-container.is-inverted.is-hovered {
+        background-color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+      .button.is-bookmark-container.is-inverted[disabled],
+      fieldset[disabled] .button.is-bookmark-container.is-inverted {
+        background-color: findColorInvert(rgba(217, 217, 217, 0.1));
+        border-color: transparent;
+        box-shadow: none;
+        color: rgba(217, 217, 217, 0.1); }
+    .button.is-bookmark-container.is-loading::after {
+      border-color: transparent transparent findColorInvert(rgba(217, 217, 217, 0.1)) findColorInvert(rgba(217, 217, 217, 0.1)) !important; }
+    .button.is-bookmark-container.is-outlined {
+      background-color: transparent;
+      border-color: rgba(217, 217, 217, 0.1);
+      color: rgba(217, 217, 217, 0.1); }
+      .button.is-bookmark-container.is-outlined:hover, .button.is-bookmark-container.is-outlined.is-hovered, .button.is-bookmark-container.is-outlined:focus, .button.is-bookmark-container.is-outlined.is-focused {
+        background-color: rgba(217, 217, 217, 0.1);
+        border-color: rgba(217, 217, 217, 0.1);
+        color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+      .button.is-bookmark-container.is-outlined.is-loading::after {
+        border-color: transparent transparent rgba(217, 217, 217, 0.1) rgba(217, 217, 217, 0.1) !important; }
+      .button.is-bookmark-container.is-outlined.is-loading:hover::after, .button.is-bookmark-container.is-outlined.is-loading.is-hovered::after, .button.is-bookmark-container.is-outlined.is-loading:focus::after, .button.is-bookmark-container.is-outlined.is-loading.is-focused::after {
+        border-color: transparent transparent findColorInvert(rgba(217, 217, 217, 0.1)) findColorInvert(rgba(217, 217, 217, 0.1)) !important; }
+      .button.is-bookmark-container.is-outlined[disabled],
+      fieldset[disabled] .button.is-bookmark-container.is-outlined {
+        background-color: transparent;
+        border-color: rgba(217, 217, 217, 0.1);
+        box-shadow: none;
+        color: rgba(217, 217, 217, 0.1); }
+    .button.is-bookmark-container.is-inverted.is-outlined {
+      background-color: transparent;
+      border-color: findColorInvert(rgba(217, 217, 217, 0.1));
+      color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+      .button.is-bookmark-container.is-inverted.is-outlined:hover, .button.is-bookmark-container.is-inverted.is-outlined.is-hovered, .button.is-bookmark-container.is-inverted.is-outlined:focus, .button.is-bookmark-container.is-inverted.is-outlined.is-focused {
+        background-color: findColorInvert(rgba(217, 217, 217, 0.1));
+        color: rgba(217, 217, 217, 0.1); }
+      .button.is-bookmark-container.is-inverted.is-outlined.is-loading:hover::after, .button.is-bookmark-container.is-inverted.is-outlined.is-loading.is-hovered::after, .button.is-bookmark-container.is-inverted.is-outlined.is-loading:focus::after, .button.is-bookmark-container.is-inverted.is-outlined.is-loading.is-focused::after {
+        border-color: transparent transparent rgba(217, 217, 217, 0.1) rgba(217, 217, 217, 0.1) !important; }
+      .button.is-bookmark-container.is-inverted.is-outlined[disabled],
+      fieldset[disabled] .button.is-bookmark-container.is-inverted.is-outlined {
+        background-color: transparent;
+        border-color: findColorInvert(rgba(217, 217, 217, 0.1));
+        box-shadow: none;
+        color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .button.is-bookmark-container.is-light {
+      background-color: rgba(245, 245, 245, 0.1);
+      color: rgba(74, 74, 74, 0.1); }
+      .button.is-bookmark-container.is-light:hover, .button.is-bookmark-container.is-light.is-hovered {
+        background-color: rgba(238, 238, 238, 0.1);
+        border-color: transparent;
+        color: rgba(74, 74, 74, 0.1); }
+      .button.is-bookmark-container.is-light:active, .button.is-bookmark-container.is-light.is-active {
+        background-color: rgba(232, 232, 232, 0.1);
+        border-color: transparent;
+        color: rgba(74, 74, 74, 0.1); }
   .button.is-small {
     font-size: 0.75rem; }
     .button.is-small:not(.is-rounded) {
@@ -1684,6 +1842,18 @@ div.icon-text {
     .notification.is-danger.is-light {
       background-color: #feecf0;
       color: #cc0f35; }
+  .notification.is-bookmark-card {
+    background-color: rgba(217, 217, 217, 0.35);
+    color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .notification.is-bookmark-card.is-light {
+      background-color: rgba(245, 245, 245, 0.35);
+      color: rgba(74, 74, 74, 0.35); }
+  .notification.is-bookmark-container {
+    background-color: rgba(217, 217, 217, 0.1);
+    color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .notification.is-bookmark-container.is-light {
+      background-color: rgba(245, 245, 245, 0.1);
+      color: rgba(74, 74, 74, 0.1); }
 
 .progress {
   -moz-appearance: none;
@@ -1784,6 +1954,22 @@ div.icon-text {
     background-color: #f14668; }
   .progress.is-danger:indeterminate {
     background-image: linear-gradient(to right, #f14668 30%, #ededed 30%); }
+  .progress.is-bookmark-card::-webkit-progress-value {
+    background-color: rgba(217, 217, 217, 0.35); }
+  .progress.is-bookmark-card::-moz-progress-bar {
+    background-color: rgba(217, 217, 217, 0.35); }
+  .progress.is-bookmark-card::-ms-fill {
+    background-color: rgba(217, 217, 217, 0.35); }
+  .progress.is-bookmark-card:indeterminate {
+    background-image: linear-gradient(to right, rgba(217, 217, 217, 0.35) 30%, #ededed 30%); }
+  .progress.is-bookmark-container::-webkit-progress-value {
+    background-color: rgba(217, 217, 217, 0.1); }
+  .progress.is-bookmark-container::-moz-progress-bar {
+    background-color: rgba(217, 217, 217, 0.1); }
+  .progress.is-bookmark-container::-ms-fill {
+    background-color: rgba(217, 217, 217, 0.1); }
+  .progress.is-bookmark-container:indeterminate {
+    background-image: linear-gradient(to right, rgba(217, 217, 217, 0.1) 30%, #ededed 30%); }
   .progress:indeterminate {
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
@@ -1872,6 +2058,16 @@ div.icon-text {
       background-color: #f14668;
       border-color: #f14668;
       color: #fff; }
+    .table td.is-bookmark-card,
+    .table th.is-bookmark-card {
+      background-color: rgba(217, 217, 217, 0.35);
+      border-color: rgba(217, 217, 217, 0.35);
+      color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .table td.is-bookmark-container,
+    .table th.is-bookmark-container {
+      background-color: rgba(217, 217, 217, 0.1);
+      border-color: rgba(217, 217, 217, 0.1);
+      color: findColorInvert(rgba(217, 217, 217, 0.1)); }
     .table td.is-narrow,
     .table th.is-narrow {
       white-space: nowrap;
@@ -2047,6 +2243,18 @@ div.icon-text {
     .tag:not(body).is-danger.is-light {
       background-color: #feecf0;
       color: #cc0f35; }
+  .tag:not(body).is-bookmark-card {
+    background-color: rgba(217, 217, 217, 0.35);
+    color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .tag:not(body).is-bookmark-card.is-light {
+      background-color: rgba(245, 245, 245, 0.35);
+      color: rgba(74, 74, 74, 0.35); }
+  .tag:not(body).is-bookmark-container {
+    background-color: rgba(217, 217, 217, 0.1);
+    color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .tag:not(body).is-bookmark-container.is-light {
+      background-color: rgba(245, 245, 245, 0.1);
+      color: rgba(74, 74, 74, 0.1); }
   .tag:not(body).is-normal {
     font-size: 0.75rem; }
   .tag:not(body).is-medium {
@@ -2280,6 +2488,14 @@ a.tag:hover {
     border-color: #f14668; }
     .is-danger.input:focus, .is-danger.textarea:focus, .is-danger.is-focused.input, .is-danger.is-focused.textarea, .is-danger.input:active, .is-danger.textarea:active, .is-danger.is-active.input, .is-danger.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(241, 70, 104, 0.25); }
+  .is-bookmark-card.input, .is-bookmark-card.textarea {
+    border-color: rgba(217, 217, 217, 0.35); }
+    .is-bookmark-card.input:focus, .is-bookmark-card.textarea:focus, .is-bookmark-card.is-focused.input, .is-bookmark-card.is-focused.textarea, .is-bookmark-card.input:active, .is-bookmark-card.textarea:active, .is-bookmark-card.is-active.input, .is-bookmark-card.is-active.textarea {
+      box-shadow: 0 0 0 0.125em rgba(217, 217, 217, 0.25); }
+  .is-bookmark-container.input, .is-bookmark-container.textarea {
+    border-color: rgba(217, 217, 217, 0.1); }
+    .is-bookmark-container.input:focus, .is-bookmark-container.textarea:focus, .is-bookmark-container.is-focused.input, .is-bookmark-container.is-focused.textarea, .is-bookmark-container.input:active, .is-bookmark-container.textarea:active, .is-bookmark-container.is-active.input, .is-bookmark-container.is-active.textarea {
+      box-shadow: 0 0 0 0.125em rgba(217, 217, 217, 0.25); }
   .is-small.input, .is-small.textarea {
     border-radius: 2px;
     font-size: 0.75rem; }
@@ -2454,6 +2670,22 @@ a.tag:hover {
       border-color: #ef2e55; }
     .select.is-danger select:focus, .select.is-danger select.is-focused, .select.is-danger select:active, .select.is-danger select.is-active {
       box-shadow: 0 0 0 0.125em rgba(241, 70, 104, 0.25); }
+  .select.is-bookmark-card:not(:hover)::after {
+    border-color: rgba(217, 217, 217, 0.35); }
+  .select.is-bookmark-card select {
+    border-color: rgba(217, 217, 217, 0.35); }
+    .select.is-bookmark-card select:hover, .select.is-bookmark-card select.is-hovered {
+      border-color: rgba(204, 204, 204, 0.35); }
+    .select.is-bookmark-card select:focus, .select.is-bookmark-card select.is-focused, .select.is-bookmark-card select:active, .select.is-bookmark-card select.is-active {
+      box-shadow: 0 0 0 0.125em rgba(217, 217, 217, 0.25); }
+  .select.is-bookmark-container:not(:hover)::after {
+    border-color: rgba(217, 217, 217, 0.1); }
+  .select.is-bookmark-container select {
+    border-color: rgba(217, 217, 217, 0.1); }
+    .select.is-bookmark-container select:hover, .select.is-bookmark-container select.is-hovered {
+      border-color: rgba(204, 204, 204, 0.1); }
+    .select.is-bookmark-container select:focus, .select.is-bookmark-container select.is-focused, .select.is-bookmark-container select:active, .select.is-bookmark-container select.is-active {
+      box-shadow: 0 0 0 0.125em rgba(217, 217, 217, 0.25); }
   .select.is-small {
     border-radius: 2px;
     font-size: 0.75rem; }
@@ -2646,6 +2878,38 @@ a.tag:hover {
     background-color: #ef2e55;
     border-color: transparent;
     color: #fff; }
+  .file.is-bookmark-card .file-cta {
+    background-color: rgba(217, 217, 217, 0.35);
+    border-color: transparent;
+    color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+  .file.is-bookmark-card:hover .file-cta, .file.is-bookmark-card.is-hovered .file-cta {
+    background-color: rgba(211, 211, 211, 0.35);
+    border-color: transparent;
+    color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+  .file.is-bookmark-card:focus .file-cta, .file.is-bookmark-card.is-focused .file-cta {
+    border-color: transparent;
+    box-shadow: 0 0 0.5em rgba(217, 217, 217, 0.25);
+    color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+  .file.is-bookmark-card:active .file-cta, .file.is-bookmark-card.is-active .file-cta {
+    background-color: rgba(204, 204, 204, 0.35);
+    border-color: transparent;
+    color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+  .file.is-bookmark-container .file-cta {
+    background-color: rgba(217, 217, 217, 0.1);
+    border-color: transparent;
+    color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+  .file.is-bookmark-container:hover .file-cta, .file.is-bookmark-container.is-hovered .file-cta {
+    background-color: rgba(211, 211, 211, 0.1);
+    border-color: transparent;
+    color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+  .file.is-bookmark-container:focus .file-cta, .file.is-bookmark-container.is-focused .file-cta {
+    border-color: transparent;
+    box-shadow: 0 0 0.5em rgba(217, 217, 217, 0.25);
+    color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+  .file.is-bookmark-container:active .file-cta, .file.is-bookmark-container.is-active .file-cta {
+    background-color: rgba(204, 204, 204, 0.1);
+    border-color: transparent;
+    color: findColorInvert(rgba(217, 217, 217, 0.1)); }
   .file.is-small {
     font-size: 0.75rem; }
   .file.is-normal {
@@ -2806,6 +3070,10 @@ a.tag:hover {
     color: #ffe08a; }
   .help.is-danger {
     color: #f14668; }
+  .help.is-bookmark-card {
+    color: rgba(217, 217, 217, 0.35); }
+  .help.is-bookmark-container {
+    color: rgba(217, 217, 217, 0.1); }
 
 .field:not(:last-child) {
   margin-bottom: 0.75rem; }
@@ -3434,6 +3702,22 @@ button.dropdown-item {
     .message.is-danger .message-body {
       border-color: #f14668;
       color: #cc0f35; }
+  .message.is-bookmark-card {
+    background-color: rgba(245, 245, 245, 0.35); }
+    .message.is-bookmark-card .message-header {
+      background-color: rgba(217, 217, 217, 0.35);
+      color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .message.is-bookmark-card .message-body {
+      border-color: rgba(217, 217, 217, 0.35);
+      color: rgba(74, 74, 74, 0.35); }
+  .message.is-bookmark-container {
+    background-color: rgba(245, 245, 245, 0.1); }
+    .message.is-bookmark-container .message-header {
+      background-color: rgba(217, 217, 217, 0.1);
+      color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .message.is-bookmark-container .message-body {
+      border-color: rgba(217, 217, 217, 0.1);
+      color: rgba(74, 74, 74, 0.1); }
 
 .message-header {
   align-items: center;
@@ -4003,6 +4287,96 @@ button.dropdown-item {
       .navbar.is-danger .navbar-dropdown a.navbar-item.is-active {
         background-color: #f14668;
         color: #fff; } }
+  .navbar.is-bookmark-card {
+    background-color: rgba(217, 217, 217, 0.35);
+    color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .navbar.is-bookmark-card .navbar-brand > .navbar-item,
+    .navbar.is-bookmark-card .navbar-brand .navbar-link {
+      color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .navbar.is-bookmark-card .navbar-brand > a.navbar-item:focus, .navbar.is-bookmark-card .navbar-brand > a.navbar-item:hover, .navbar.is-bookmark-card .navbar-brand > a.navbar-item.is-active,
+    .navbar.is-bookmark-card .navbar-brand .navbar-link:focus,
+    .navbar.is-bookmark-card .navbar-brand .navbar-link:hover,
+    .navbar.is-bookmark-card .navbar-brand .navbar-link.is-active {
+      background-color: rgba(204, 204, 204, 0.35);
+      color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .navbar.is-bookmark-card .navbar-brand .navbar-link::after {
+      border-color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .navbar.is-bookmark-card .navbar-burger {
+      color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    @media screen and (min-width: 1024px) {
+      .navbar.is-bookmark-card .navbar-start > .navbar-item,
+      .navbar.is-bookmark-card .navbar-start .navbar-link,
+      .navbar.is-bookmark-card .navbar-end > .navbar-item,
+      .navbar.is-bookmark-card .navbar-end .navbar-link {
+        color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+      .navbar.is-bookmark-card .navbar-start > a.navbar-item:focus, .navbar.is-bookmark-card .navbar-start > a.navbar-item:hover, .navbar.is-bookmark-card .navbar-start > a.navbar-item.is-active,
+      .navbar.is-bookmark-card .navbar-start .navbar-link:focus,
+      .navbar.is-bookmark-card .navbar-start .navbar-link:hover,
+      .navbar.is-bookmark-card .navbar-start .navbar-link.is-active,
+      .navbar.is-bookmark-card .navbar-end > a.navbar-item:focus,
+      .navbar.is-bookmark-card .navbar-end > a.navbar-item:hover,
+      .navbar.is-bookmark-card .navbar-end > a.navbar-item.is-active,
+      .navbar.is-bookmark-card .navbar-end .navbar-link:focus,
+      .navbar.is-bookmark-card .navbar-end .navbar-link:hover,
+      .navbar.is-bookmark-card .navbar-end .navbar-link.is-active {
+        background-color: rgba(204, 204, 204, 0.35);
+        color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+      .navbar.is-bookmark-card .navbar-start .navbar-link::after,
+      .navbar.is-bookmark-card .navbar-end .navbar-link::after {
+        border-color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+      .navbar.is-bookmark-card .navbar-item.has-dropdown:focus .navbar-link,
+      .navbar.is-bookmark-card .navbar-item.has-dropdown:hover .navbar-link,
+      .navbar.is-bookmark-card .navbar-item.has-dropdown.is-active .navbar-link {
+        background-color: rgba(204, 204, 204, 0.35);
+        color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+      .navbar.is-bookmark-card .navbar-dropdown a.navbar-item.is-active {
+        background-color: rgba(217, 217, 217, 0.35);
+        color: findColorInvert(rgba(217, 217, 217, 0.35)); } }
+  .navbar.is-bookmark-container {
+    background-color: rgba(217, 217, 217, 0.1);
+    color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .navbar.is-bookmark-container .navbar-brand > .navbar-item,
+    .navbar.is-bookmark-container .navbar-brand .navbar-link {
+      color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .navbar.is-bookmark-container .navbar-brand > a.navbar-item:focus, .navbar.is-bookmark-container .navbar-brand > a.navbar-item:hover, .navbar.is-bookmark-container .navbar-brand > a.navbar-item.is-active,
+    .navbar.is-bookmark-container .navbar-brand .navbar-link:focus,
+    .navbar.is-bookmark-container .navbar-brand .navbar-link:hover,
+    .navbar.is-bookmark-container .navbar-brand .navbar-link.is-active {
+      background-color: rgba(204, 204, 204, 0.1);
+      color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .navbar.is-bookmark-container .navbar-brand .navbar-link::after {
+      border-color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .navbar.is-bookmark-container .navbar-burger {
+      color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    @media screen and (min-width: 1024px) {
+      .navbar.is-bookmark-container .navbar-start > .navbar-item,
+      .navbar.is-bookmark-container .navbar-start .navbar-link,
+      .navbar.is-bookmark-container .navbar-end > .navbar-item,
+      .navbar.is-bookmark-container .navbar-end .navbar-link {
+        color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+      .navbar.is-bookmark-container .navbar-start > a.navbar-item:focus, .navbar.is-bookmark-container .navbar-start > a.navbar-item:hover, .navbar.is-bookmark-container .navbar-start > a.navbar-item.is-active,
+      .navbar.is-bookmark-container .navbar-start .navbar-link:focus,
+      .navbar.is-bookmark-container .navbar-start .navbar-link:hover,
+      .navbar.is-bookmark-container .navbar-start .navbar-link.is-active,
+      .navbar.is-bookmark-container .navbar-end > a.navbar-item:focus,
+      .navbar.is-bookmark-container .navbar-end > a.navbar-item:hover,
+      .navbar.is-bookmark-container .navbar-end > a.navbar-item.is-active,
+      .navbar.is-bookmark-container .navbar-end .navbar-link:focus,
+      .navbar.is-bookmark-container .navbar-end .navbar-link:hover,
+      .navbar.is-bookmark-container .navbar-end .navbar-link.is-active {
+        background-color: rgba(204, 204, 204, 0.1);
+        color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+      .navbar.is-bookmark-container .navbar-start .navbar-link::after,
+      .navbar.is-bookmark-container .navbar-end .navbar-link::after {
+        border-color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+      .navbar.is-bookmark-container .navbar-item.has-dropdown:focus .navbar-link,
+      .navbar.is-bookmark-container .navbar-item.has-dropdown:hover .navbar-link,
+      .navbar.is-bookmark-container .navbar-item.has-dropdown.is-active .navbar-link {
+        background-color: rgba(204, 204, 204, 0.1);
+        color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+      .navbar.is-bookmark-container .navbar-dropdown a.navbar-item.is-active {
+        background-color: rgba(217, 217, 217, 0.1);
+        color: findColorInvert(rgba(217, 217, 217, 0.1)); } }
   .navbar > .container {
     align-items: stretch;
     display: flex;
@@ -4549,6 +4923,20 @@ a.navbar-item,
     border-bottom-color: #f14668; }
   .panel.is-danger .panel-block.is-active .panel-icon {
     color: #f14668; }
+  .panel.is-bookmark-card .panel-heading {
+    background-color: rgba(217, 217, 217, 0.35);
+    color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+  .panel.is-bookmark-card .panel-tabs a.is-active {
+    border-bottom-color: rgba(217, 217, 217, 0.35); }
+  .panel.is-bookmark-card .panel-block.is-active .panel-icon {
+    color: rgba(217, 217, 217, 0.35); }
+  .panel.is-bookmark-container .panel-heading {
+    background-color: rgba(217, 217, 217, 0.1);
+    color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+  .panel.is-bookmark-container .panel-tabs a.is-active {
+    border-bottom-color: rgba(217, 217, 217, 0.1); }
+  .panel.is-bookmark-container .panel-block.is-active .panel-icon {
+    color: rgba(217, 217, 217, 0.1); }
 
 .panel-tabs:not(:last-child),
 .panel-block:not(:last-child) {
@@ -6123,6 +6511,60 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 .has-background-danger-dark {
   background-color: #cc0f35 !important; }
+
+.has-text-bookmark-card {
+  color: rgba(217, 217, 217, 0.35) !important; }
+
+a.has-text-bookmark-card:hover, a.has-text-bookmark-card:focus {
+  color: rgba(192, 192, 192, 0.35) !important; }
+
+.has-background-bookmark-card {
+  background-color: rgba(217, 217, 217, 0.35) !important; }
+
+.has-text-bookmark-card-light {
+  color: rgba(245, 245, 245, 0.35) !important; }
+
+a.has-text-bookmark-card-light:hover, a.has-text-bookmark-card-light:focus {
+  color: rgba(219, 219, 219, 0.35) !important; }
+
+.has-background-bookmark-card-light {
+  background-color: rgba(245, 245, 245, 0.35) !important; }
+
+.has-text-bookmark-card-dark {
+  color: rgba(74, 74, 74, 0.35) !important; }
+
+a.has-text-bookmark-card-dark:hover, a.has-text-bookmark-card-dark:focus {
+  color: rgba(99, 99, 99, 0.35) !important; }
+
+.has-background-bookmark-card-dark {
+  background-color: rgba(74, 74, 74, 0.35) !important; }
+
+.has-text-bookmark-container {
+  color: rgba(217, 217, 217, 0.1) !important; }
+
+a.has-text-bookmark-container:hover, a.has-text-bookmark-container:focus {
+  color: rgba(192, 192, 192, 0.1) !important; }
+
+.has-background-bookmark-container {
+  background-color: rgba(217, 217, 217, 0.1) !important; }
+
+.has-text-bookmark-container-light {
+  color: rgba(245, 245, 245, 0.1) !important; }
+
+a.has-text-bookmark-container-light:hover, a.has-text-bookmark-container-light:focus {
+  color: rgba(219, 219, 219, 0.1) !important; }
+
+.has-background-bookmark-container-light {
+  background-color: rgba(245, 245, 245, 0.1) !important; }
+
+.has-text-bookmark-container-dark {
+  color: rgba(74, 74, 74, 0.1) !important; }
+
+a.has-text-bookmark-container-dark:hover, a.has-text-bookmark-container-dark:focus {
+  color: rgba(99, 99, 99, 0.1) !important; }
+
+.has-background-bookmark-container-dark {
+  background-color: rgba(74, 74, 74, 0.1) !important; }
 
 .has-text-black-bis {
   color: #121212 !important; }
@@ -7802,6 +8244,96 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
       @media screen and (max-width: 768px) {
         .hero.is-danger.is-bold .navbar-menu {
           background-image: linear-gradient(141deg, #fa0a62 0%, #f14668 71%, #f7595f 100%); } }
+  .hero.is-bookmark-card {
+    background-color: rgba(217, 217, 217, 0.35);
+    color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .hero.is-bookmark-card a:not(.button):not(.dropdown-item):not(.tag):not(.pagination-link.is-current),
+    .hero.is-bookmark-card strong {
+      color: inherit; }
+    .hero.is-bookmark-card .title {
+      color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .hero.is-bookmark-card .subtitle {
+      color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+      .hero.is-bookmark-card .subtitle a:not(.button),
+      .hero.is-bookmark-card .subtitle strong {
+        color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    @media screen and (max-width: 1023px) {
+      .hero.is-bookmark-card .navbar-menu {
+        background-color: rgba(217, 217, 217, 0.35); } }
+    .hero.is-bookmark-card .navbar-item,
+    .hero.is-bookmark-card .navbar-link {
+      color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .hero.is-bookmark-card a.navbar-item:hover, .hero.is-bookmark-card a.navbar-item.is-active,
+    .hero.is-bookmark-card .navbar-link:hover,
+    .hero.is-bookmark-card .navbar-link.is-active {
+      background-color: rgba(204, 204, 204, 0.35);
+      color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+    .hero.is-bookmark-card .tabs a {
+      color: findColorInvert(rgba(217, 217, 217, 0.35));
+      opacity: 0.9; }
+      .hero.is-bookmark-card .tabs a:hover {
+        opacity: 1; }
+    .hero.is-bookmark-card .tabs li.is-active a {
+      color: rgba(217, 217, 217, 0.35) !important;
+      opacity: 1; }
+    .hero.is-bookmark-card .tabs.is-boxed a, .hero.is-bookmark-card .tabs.is-toggle a {
+      color: findColorInvert(rgba(217, 217, 217, 0.35)); }
+      .hero.is-bookmark-card .tabs.is-boxed a:hover, .hero.is-bookmark-card .tabs.is-toggle a:hover {
+        background-color: rgba(10, 10, 10, 0.1); }
+    .hero.is-bookmark-card .tabs.is-boxed li.is-active a, .hero.is-bookmark-card .tabs.is-boxed li.is-active a:hover, .hero.is-bookmark-card .tabs.is-toggle li.is-active a, .hero.is-bookmark-card .tabs.is-toggle li.is-active a:hover {
+      background-color: findColorInvert(rgba(217, 217, 217, 0.35));
+      border-color: findColorInvert(rgba(217, 217, 217, 0.35));
+      color: rgba(217, 217, 217, 0.35); }
+    .hero.is-bookmark-card.is-bold {
+      background-image: linear-gradient(141deg, rgba(198, 185, 187, 0.35) 0%, rgba(217, 217, 217, 0.35) 71%, rgba(231, 229, 228, 0.35) 100%); }
+      @media screen and (max-width: 768px) {
+        .hero.is-bookmark-card.is-bold .navbar-menu {
+          background-image: linear-gradient(141deg, rgba(198, 185, 187, 0.35) 0%, rgba(217, 217, 217, 0.35) 71%, rgba(231, 229, 228, 0.35) 100%); } }
+  .hero.is-bookmark-container {
+    background-color: rgba(217, 217, 217, 0.1);
+    color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .hero.is-bookmark-container a:not(.button):not(.dropdown-item):not(.tag):not(.pagination-link.is-current),
+    .hero.is-bookmark-container strong {
+      color: inherit; }
+    .hero.is-bookmark-container .title {
+      color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .hero.is-bookmark-container .subtitle {
+      color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+      .hero.is-bookmark-container .subtitle a:not(.button),
+      .hero.is-bookmark-container .subtitle strong {
+        color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    @media screen and (max-width: 1023px) {
+      .hero.is-bookmark-container .navbar-menu {
+        background-color: rgba(217, 217, 217, 0.1); } }
+    .hero.is-bookmark-container .navbar-item,
+    .hero.is-bookmark-container .navbar-link {
+      color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .hero.is-bookmark-container a.navbar-item:hover, .hero.is-bookmark-container a.navbar-item.is-active,
+    .hero.is-bookmark-container .navbar-link:hover,
+    .hero.is-bookmark-container .navbar-link.is-active {
+      background-color: rgba(204, 204, 204, 0.1);
+      color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+    .hero.is-bookmark-container .tabs a {
+      color: findColorInvert(rgba(217, 217, 217, 0.1));
+      opacity: 0.9; }
+      .hero.is-bookmark-container .tabs a:hover {
+        opacity: 1; }
+    .hero.is-bookmark-container .tabs li.is-active a {
+      color: rgba(217, 217, 217, 0.1) !important;
+      opacity: 1; }
+    .hero.is-bookmark-container .tabs.is-boxed a, .hero.is-bookmark-container .tabs.is-toggle a {
+      color: findColorInvert(rgba(217, 217, 217, 0.1)); }
+      .hero.is-bookmark-container .tabs.is-boxed a:hover, .hero.is-bookmark-container .tabs.is-toggle a:hover {
+        background-color: rgba(10, 10, 10, 0.1); }
+    .hero.is-bookmark-container .tabs.is-boxed li.is-active a, .hero.is-bookmark-container .tabs.is-boxed li.is-active a:hover, .hero.is-bookmark-container .tabs.is-toggle li.is-active a, .hero.is-bookmark-container .tabs.is-toggle li.is-active a:hover {
+      background-color: findColorInvert(rgba(217, 217, 217, 0.1));
+      border-color: findColorInvert(rgba(217, 217, 217, 0.1));
+      color: rgba(217, 217, 217, 0.1); }
+    .hero.is-bookmark-container.is-bold {
+      background-image: linear-gradient(141deg, rgba(198, 185, 187, 0.1) 0%, rgba(217, 217, 217, 0.1) 71%, rgba(231, 229, 228, 0.1) 100%); }
+      @media screen and (max-width: 768px) {
+        .hero.is-bookmark-container.is-bold .navbar-menu {
+          background-image: linear-gradient(141deg, rgba(198, 185, 187, 0.1) 0%, rgba(217, 217, 217, 0.1) 71%, rgba(231, 229, 228, 0.1) 100%); } }
   .hero.is-small .hero-body {
     padding: 1.5rem; }
   @media screen and (min-width: 769px), print {

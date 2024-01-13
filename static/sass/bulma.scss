@@ -9,4 +9,15 @@ $family-primary: $family-inter;
 $text: white;
 $text-strong: white;
 
+$bookmark-card: rgba(217, 217, 217, 0.35);
+$bookmark-card-invert: findColorInvert($bookmark-card);
+
+$bookmark-container: rgba(217, 217, 217, 0.10);
+$bookmark-container-invert: findColorInvert($bookmark-container);
+
+$custom-colors: (
+    "bookmark-card": ($bookmark-card, $bookmark-card-invert),
+    "bookmark-container": ($bookmark-container, $bookmark-container-invert)
+    );
+
 @import "../../node_modules/bulma/bulma.sass";

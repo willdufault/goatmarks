@@ -5,7 +5,7 @@
 			<NavigationBar></NavigationBar>
 		</div>
 		<div class="columns m-1">
-			<div class="column is-8 borderify">
+			<div class="column is-8 has-background-bookmark-container">
 				<Bookmarks></Bookmarks>
 			</div>
 			<div class="column is-4 borderify">
