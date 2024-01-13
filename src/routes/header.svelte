@@ -7,8 +7,8 @@
 			</figure>
 			<h1 class='title is-4'>GoatMarks</h1>
 		</a>
-		<button class='invisible-button is-size-3 is-flex'>
-			<Icon icon="ic:round-person" />
+		<button class='invisible-button is-size-2 is-flex'>
+			<Icon icon="mdi:person" />
 		</button>
 	</div>
 </main>

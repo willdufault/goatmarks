@@ -10,7 +10,7 @@
   -webkit-appearance: none;
   align-items: center;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 1rem;
   box-shadow: none;
   display: inline-flex;
   font-size: 1rem;
@@ -1773,7 +1773,7 @@ div.icon-text {
 
 .notification {
   background-color: whitesmoke;
-  border-radius: 4px;
+  border-radius: 1rem;
   position: relative;
   padding: 1.25rem 2.5rem 1.25rem 1.5rem; }
   .notification a:not(.button):not(.dropdown-item) {
@@ -2182,7 +2182,7 @@ div.icon-text {
 .tag:not(body) {
   align-items: center;
   background-color: whitesmoke;
-  border-radius: 4px;
+  border-radius: 1rem;
   color: white;
   display: inline-flex;
   font-size: 0.75rem;
@@ -2393,16 +2393,16 @@ a.tag:hover {
 .input, .textarea, .select select {
   background-color: white;
   border-color: #dbdbdb;
-  border-radius: 4px;
-  color: white; }
+  border-radius: 1rem;
+  color: #333; }
   .input::-moz-placeholder, .textarea::-moz-placeholder, .select select::-moz-placeholder {
-    color: rgba(255, 255, 255, 0.3); }
+    color: rgba(51, 51, 51, 0.3); }
   .input::-webkit-input-placeholder, .textarea::-webkit-input-placeholder, .select select::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.3); }
+    color: rgba(51, 51, 51, 0.3); }
   .input:-moz-placeholder, .textarea:-moz-placeholder, .select select:-moz-placeholder {
-    color: rgba(255, 255, 255, 0.3); }
+    color: rgba(51, 51, 51, 0.3); }
   .input:-ms-input-placeholder, .textarea:-ms-input-placeholder, .select select:-ms-input-placeholder {
-    color: rgba(255, 255, 255, 0.3); }
+    color: rgba(51, 51, 51, 0.3); }
   .input:hover, .textarea:hover, .select select:hover, .is-hovered.input, .is-hovered.textarea, .select select.is-hovered {
     border-color: #b5b5b5; }
   .input:focus, .textarea:focus, .select select:focus, .is-focused.input, .is-focused.textarea, .select select.is-focused, .input:active, .textarea:active, .select select:active, .is-active.input, .is-active.textarea, .select select.is-active {
@@ -2929,7 +2929,7 @@ a.tag:hover {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0; }
   .file.has-name.is-empty .file-cta {
-    border-radius: 4px; }
+    border-radius: 1rem; }
   .file.has-name.is-empty .file-name {
     display: none; }
   .file.is-boxed .file-label {
@@ -2952,9 +2952,9 @@ a.tag:hover {
   .file.is-boxed.is-large .file-icon .fa {
     font-size: 35px; }
   .file.is-boxed.has-name .file-cta {
-    border-radius: 4px 4px 0 0; }
+    border-radius: 1rem 1rem 0 0; }
   .file.is-boxed.has-name .file-name {
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 1rem 1rem;
     border-width: 0 1px 1px; }
   .file.is-centered {
     justify-content: center; }
@@ -2966,9 +2966,9 @@ a.tag:hover {
   .file.is-right {
     justify-content: flex-end; }
     .file.is-right .file-cta {
-      border-radius: 0 4px 4px 0; }
+      border-radius: 0 1rem 1rem 0; }
     .file.is-right .file-name {
-      border-radius: 4px 0 0 4px;
+      border-radius: 1rem 0 0 1rem;
       border-width: 1px 0 1px 1px;
       order: -1; }
 
@@ -3002,7 +3002,7 @@ a.tag:hover {
 .file-cta,
 .file-name {
   border-color: #dbdbdb;
-  border-radius: 4px;
+  border-radius: 1rem;
   font-size: 1em;
   padding-left: 1em;
   padding-right: 1em;
@@ -3215,7 +3215,7 @@ a.tag:hover {
   .control.has-icons-left .input:focus ~ .icon,
   .control.has-icons-left .select:focus ~ .icon, .control.has-icons-right .input:focus ~ .icon,
   .control.has-icons-right .select:focus ~ .icon {
-    color: white; }
+    color: #333; }
   .control.has-icons-left .input.is-small ~ .icon,
   .control.has-icons-left .select.is-small ~ .icon, .control.has-icons-right .input.is-small ~ .icon,
   .control.has-icons-right .select.is-small ~ .icon {
@@ -3229,7 +3229,7 @@ a.tag:hover {
   .control.has-icons-right .select.is-large ~ .icon {
     font-size: 1.5rem; }
   .control.has-icons-left .icon, .control.has-icons-right .icon {
-    color: #dbdbdb;
+    color: #666;
     height: 2.5em;
     pointer-events: none;
     position: absolute;
@@ -3422,7 +3422,7 @@ a.tag:hover {
 
 .dropdown-content {
   background-color: white;
-  border-radius: 4px;
+  border-radius: 1rem;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
   padding-bottom: 0.5rem;
   padding-top: 0.5rem; }
@@ -3461,7 +3461,7 @@ button.dropdown-item {
   align-items: center;
   justify-content: space-between; }
   .level code {
-    border-radius: 4px; }
+    border-radius: 1rem; }
   .level img {
     display: inline-block;
     vertical-align: top; }
@@ -3613,7 +3613,7 @@ button.dropdown-item {
 
 .message {
   background-color: whitesmoke;
-  border-radius: 4px;
+  border-radius: 1rem;
   font-size: 1rem; }
   .message strong {
     color: currentColor; }
@@ -3722,7 +3722,7 @@ button.dropdown-item {
 .message-header {
   align-items: center;
   background-color: white;
-  border-radius: 4px 4px 0 0;
+  border-radius: 1rem 1rem 0 0;
   color: rgba(0, 0, 0, 0.7);
   display: flex;
   font-weight: 700;
@@ -3741,7 +3741,7 @@ button.dropdown-item {
 
 .message-body {
   border-color: #dbdbdb;
-  border-radius: 4px;
+  border-radius: 1rem;
   border-style: solid;
   border-width: 0 0 0 4px;
   color: white;
@@ -4589,7 +4589,7 @@ a.navbar-item,
         align-items: center; }
       .navbar.is-spaced a.navbar-item,
       .navbar.is-spaced .navbar-link {
-        border-radius: 4px; }
+        border-radius: 1rem; }
     .navbar.is-transparent a.navbar-item:focus, .navbar.is-transparent a.navbar-item:hover, .navbar.is-transparent a.navbar-item.is-active,
     .navbar.is-transparent .navbar-link:focus,
     .navbar.is-transparent .navbar-link:hover,
@@ -5070,7 +5070,7 @@ label.panel-block {
     justify-content: flex-end; }
   .tabs.is-boxed a {
     border: 1px solid transparent;
-    border-radius: 4px 4px 0 0; }
+    border-radius: 1rem 1rem 0 0; }
     .tabs.is-boxed a:hover {
       background-color: whitesmoke;
       border-bottom-color: #dbdbdb; }
@@ -5094,11 +5094,11 @@ label.panel-block {
   .tabs.is-toggle li + li {
     margin-left: -1px; }
   .tabs.is-toggle li:first-child a {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px; }
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem; }
   .tabs.is-toggle li:last-child a {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px; }
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem; }
   .tabs.is-toggle li.is-active a {
     background-color: #485fc7;
     border-color: #485fc7;

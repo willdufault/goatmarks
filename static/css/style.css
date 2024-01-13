@@ -7,6 +7,11 @@ body{
     height: 100vh;
 }
 
+input {
+	padding: 0 1rem;
+	background: white;
+}
+
 .card-image:first-child img {
     border-top-left-radius: 9999px !important; 
     border-top-right-radius: 9999px !important; 

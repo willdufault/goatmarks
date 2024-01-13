@@ -1,27 +1,38 @@
 <!-- HTML. -->
 <main>
     <div class='container is-flex is-justify-content-space-between'>
-			<input bind:this={search_input} type='text' placeholder='Search Google or type a URL.' on:keypress={search}>
-			<div class='buttons-wrapper'>
-
-				<!-- 
-
-					Stevie recommends modal for log in, maybe just a pop up underneath for joining a room
-
-				 -->
-
-				<button class='button is-white is-outlined'>suck</button>
-				<button class='button is-white is-outlined'>my</button>
-				<button class='button is-white is-outlined'>nuts</button>
+			<!-- <input bind:this={search_input} type='text' placeholder='Search Google or type a URL.	' on:keypress={search}> -->
+			
+			<div class="field mb-0">
+				<p class="control has-icons-left has-icons-right">
+					<input bind:this={search_input} class="input google-search-bar" placeholder="Search Google or type a URL" on:keydown={search}>
+					<span class="icon is-small is-left">
+						<Icon icon='logos:google-icon' />
+					</span>
+					<span class="icon is-small is-right">
+						<Icon icon='tabler:search' />
+					</span>
+				</p>
 			</div>
+			
+			<button class='invisible-button is-size-2 is-flex'>
+				<Icon icon='mdi:people' />
+			</button>
+			<!-- modal or drop down menu for this? -->
 		</div>
 </main>
 
 <!-- CSS. -->
-<style></style>
+<style>
+	.google-search-bar {
+		width: 40rem;
+	}
+</style>
 
 <!-- TypeScript. -->
 <script lang='ts'>
+	import Icon from '@iconify/svelte';
+
 	// Search bar.
 	let search_input: HTMLInputElement;
 

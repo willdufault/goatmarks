@@ -9,6 +9,16 @@ $family-primary: $family-inter;
 $text: white;
 $text-strong: white;
 
+// Change the default border radius.
+$radius: 1rem;
+
+// Custom text input.
+$custom-gray: #666;
+$custom-dark-gray: #333;
+$input-icon-color: $custom-gray;
+$input-icon-active-color: $custom-dark-gray;
+$input-color: $custom-dark-gray;
+
 $bookmark-card: rgba(217, 217, 217, 0.35);
 $bookmark-card-invert: findColorInvert($bookmark-card);
 
