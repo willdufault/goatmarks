@@ -2,7 +2,7 @@
 <main></main>
 
 <!-- CSS. -->
-<style lang='scss'></style>
+<style></style>
 
 <!-- TypeScript. -->
 <script lang='ts'></script>

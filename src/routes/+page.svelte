@@ -1,14 +1,14 @@
 <!-- HTML. -->
 <main>
 	<h1 class='title'>title</h1>
-	<button class='button'>button</button>
+	<button class='button is-danger'>button</button>
+	<Test></Test>
 </main>
 
-<!-- SCSS. -->
-<style lang='scss'>
-	// Main styles.
-	@import '../scss/style.scss';
-</style>
+<!-- CSS. -->
+<style></style>
 
 <!-- TypeScript. -->
-<script lang='ts'></script>
+<script lang='ts'>
+	import Test from './test.svelte';
+</script>
