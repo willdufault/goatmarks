@@ -6,11 +6,12 @@
 			<NavigationBar></NavigationBar>
 		</div>
 		<div class="columns m-1 is-variable is-2">
-			<div class="column is-8 has-background-bookmark-container">
+			<div class="column is-8">
 				<Bookmarks></Bookmarks>
 			</div>
-			<div class="column is-4 has-background-bookmark-container is-flex is-justify-content-center is-align-items-center">
+			<div class="column is-4">
 				<Clock></Clock>
+				<Bookmarks></Bookmarks>
 			</div>
 		</div>
 	</div>

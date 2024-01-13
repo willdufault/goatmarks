@@ -1,12 +1,12 @@
 <!-- HTML. -->
 <main>
-	<div class='container is-flex is-justify-content-center is-align-items-center p-5'>
-		<h1 class='title is-1 pr-2 mb-0'>{hours}:{minutes}</h1>
+	<div class='has-background-bookmark-container rounded-25 container is-flex is-justify-content-center is-align-items-center p-5'>
+		<h1 class='title time-big is-1 pr-2 mb-0'>{hours}:{minutes}</h1>
 		<div>
-			<div>
+			<div class='time-small'>
 				{seconds} {period}
 			</div>
-			<div>
+			<div class='time-small'>
 				{month} {day}
 			</div>
 		</div>
@@ -14,7 +14,16 @@
 </main>
 
 <!-- CSS. -->
-<style></style>
+<style>
+	.time-big {
+		font-size: 5rem;
+		font-weight: 700;
+	}
+
+	.time-small {
+		font-size: 1.5rem;
+	}
+</style>
 
 <!-- TypeScript. -->
 <script lang='ts'>

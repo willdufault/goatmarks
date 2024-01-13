@@ -28,3 +28,16 @@ input {
 .box-shadow-surround {
 	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
 }
+
+.height-fit-content {
+	height: fit-content !important;
+}
+
+.rounded-25 {
+	border-radius: 25px;
+}
+
+.rounded-50 {
+	border-radius: 50px;
+	/* background-clip: content-box; */
+}
