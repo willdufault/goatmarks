@@ -11,7 +11,7 @@
 			</div>
 			<div class="column is-4">
 				<Clock></Clock>
-				<Bookmarks></Bookmarks>
+				<Grouped></Grouped>
 			</div>
 		</div>
 	</div>
@@ -48,4 +48,5 @@
 	import NavigationBar from './navigation-bar.svelte';
 	import Bookmarks from './bookmarks.svelte';
 	import Clock from './clock.svelte';
+	import Grouped from './grouped.svelte'
 </script>
