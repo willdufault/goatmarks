@@ -3,7 +3,7 @@
   // import axios from "axios";
 
   async function doSomething() {
-    const response = await fetch("/healthcheck", {
+    const response = await fetch("/a", {
       method: "POST",
       body: "what is happening ere",
     });
