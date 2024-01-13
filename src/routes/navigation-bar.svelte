@@ -22,28 +22,53 @@
 
 <!-- TypeScript. -->
 <script lang='ts'>
+	// Search bar.
 	let search_input: HTMLInputElement;
 
 	/*
-
+	Determine whether a given query is a valid URL.
 	*/
-	async function pageExists(url: string) {
+	function validURL(query: string): boolean {
+		// Valid URL regex pattern.
+		let pattern: RegExp = new RegExp(/^((https?|ftp|smtp|localhost):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/);
 
-    let response = await fetch( `https://${url}` )
-		console.log(response.json());
-		return false;
+		// True if the given query matches the URL pattern.
+		return pattern.test(query); 
 	}
 
 	/*
-
+	When the enter key is pressed, parse the query and open a new tab with the website if the query is 
+	a valid URL, otherwise open a new tab with a Google search for the query.
 	*/
 	function search(event: KeyboardEvent): void {
+		// Enter key pressed.
 		if(event.key === 'Enter') {
+			// Search query.
 			let query: string = search_input.value;
 
-			console.log(pageExists(query));
+			// Common protocols at the beginning of URLs.
+			// Currently only supports http and https.
+			let protocols: string[] = ['http://', 'https://'];
 
-			window.open(`https://google.com/search?q=${query}`)
+			// Iterate through protocols.
+			for(let protocol of protocols) {
+				// Query begins with this protocol.
+				if(query.startsWith(protocol)) {
+					// Strip the protocol from the query.
+					query = query.slice(protocol.length);
+
+					// Protocol found, remove it.
+					// Assuming query is well-formed and does not have multiple protocols.
+					break;
+				}
+			}
+
+			// Adds 'https://' to the beginning of the query if it is a valid URL. Otherwise it will 
+			// search Google for the query.
+			let url = validURL(query) ? `https://${query}` : `https://google.com/search?q=${query}`;
+
+			// Open the url in a new tab.
+			window.open(url);
 		}
 	}
 </script>
