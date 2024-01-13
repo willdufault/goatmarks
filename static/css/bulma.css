@@ -309,7 +309,7 @@ pre {
   font-family: monospace; }
 
 body {
-  color: #4a4a4a;
+  color: white;
   font-size: 1em;
   font-weight: 400;
   line-height: 1.5; }
@@ -353,7 +353,7 @@ span {
   font-weight: inherit; }
 
 strong {
-  color: #363636;
+  color: white;
   font-weight: 700; }
 
 fieldset {
@@ -362,7 +362,7 @@ fieldset {
 pre {
   -webkit-overflow-scrolling: touch;
   background-color: whitesmoke;
-  color: #4a4a4a;
+  color: white;
   font-size: 0.875em;
   overflow-x: auto;
   padding: 1.25rem 1.5rem;
@@ -382,7 +382,7 @@ table th {
     text-align: inherit; }
 
 table th {
-  color: #363636; }
+  color: white; }
 
 @keyframes spinAround {
   from {
@@ -395,7 +395,7 @@ table th {
   background-color: white;
   border-radius: 6px;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
-  color: #4a4a4a;
+  color: white;
   display: block;
   padding: 1.25rem; }
 
@@ -409,7 +409,7 @@ a.box:active {
   background-color: white;
   border-color: #dbdbdb;
   border-width: 1px;
-  color: #363636;
+  color: white;
   cursor: pointer;
   justify-content: center;
   padding-bottom: calc(0.5em - 1px);
@@ -446,14 +446,14 @@ a.box:active {
   .button.is-text {
     background-color: transparent;
     border-color: transparent;
-    color: #4a4a4a;
+    color: white;
     text-decoration: underline; }
     .button.is-text:hover, .button.is-text.is-hovered, .button.is-text:focus, .button.is-text.is-focused {
       background-color: whitesmoke;
-      color: #363636; }
+      color: white; }
     .button.is-text:active, .button.is-text.is-active {
       background-color: #e8e8e8;
-      color: #363636; }
+      color: white; }
     .button.is-text[disabled],
     fieldset[disabled] .button.is-text {
       background-color: transparent;
@@ -1135,30 +1135,30 @@ a.box:active {
         border-color: transparent;
         color: #946c00; }
   .button.is-danger {
-    background-color: blue;
+    background-color: #f14668;
     border-color: transparent;
     color: #fff; }
     .button.is-danger:hover, .button.is-danger.is-hovered {
-      background-color: #0000f2;
+      background-color: #f03a5f;
       border-color: transparent;
       color: #fff; }
     .button.is-danger:focus, .button.is-danger.is-focused {
       border-color: transparent;
       color: #fff; }
       .button.is-danger:focus:not(:active), .button.is-danger.is-focused:not(:active) {
-        box-shadow: 0 0 0 0.125em rgba(0, 0, 255, 0.25); }
+        box-shadow: 0 0 0 0.125em rgba(241, 70, 104, 0.25); }
     .button.is-danger:active, .button.is-danger.is-active {
-      background-color: #0000e6;
+      background-color: #ef2e55;
       border-color: transparent;
       color: #fff; }
     .button.is-danger[disabled],
     fieldset[disabled] .button.is-danger {
-      background-color: blue;
-      border-color: blue;
+      background-color: #f14668;
+      border-color: #f14668;
       box-shadow: none; }
     .button.is-danger.is-inverted {
       background-color: #fff;
-      color: blue; }
+      color: #f14668; }
       .button.is-danger.is-inverted:hover, .button.is-danger.is-inverted.is-hovered {
         background-color: #f2f2f2; }
       .button.is-danger.is-inverted[disabled],
@@ -1166,36 +1166,36 @@ a.box:active {
         background-color: #fff;
         border-color: transparent;
         box-shadow: none;
-        color: blue; }
+        color: #f14668; }
     .button.is-danger.is-loading::after {
       border-color: transparent transparent #fff #fff !important; }
     .button.is-danger.is-outlined {
       background-color: transparent;
-      border-color: blue;
-      color: blue; }
+      border-color: #f14668;
+      color: #f14668; }
       .button.is-danger.is-outlined:hover, .button.is-danger.is-outlined.is-hovered, .button.is-danger.is-outlined:focus, .button.is-danger.is-outlined.is-focused {
-        background-color: blue;
-        border-color: blue;
+        background-color: #f14668;
+        border-color: #f14668;
         color: #fff; }
       .button.is-danger.is-outlined.is-loading::after {
-        border-color: transparent transparent blue blue !important; }
+        border-color: transparent transparent #f14668 #f14668 !important; }
       .button.is-danger.is-outlined.is-loading:hover::after, .button.is-danger.is-outlined.is-loading.is-hovered::after, .button.is-danger.is-outlined.is-loading:focus::after, .button.is-danger.is-outlined.is-loading.is-focused::after {
         border-color: transparent transparent #fff #fff !important; }
       .button.is-danger.is-outlined[disabled],
       fieldset[disabled] .button.is-danger.is-outlined {
         background-color: transparent;
-        border-color: blue;
+        border-color: #f14668;
         box-shadow: none;
-        color: blue; }
+        color: #f14668; }
     .button.is-danger.is-inverted.is-outlined {
       background-color: transparent;
       border-color: #fff;
       color: #fff; }
       .button.is-danger.is-inverted.is-outlined:hover, .button.is-danger.is-inverted.is-outlined.is-hovered, .button.is-danger.is-inverted.is-outlined:focus, .button.is-danger.is-inverted.is-outlined.is-focused {
         background-color: #fff;
-        color: blue; }
+        color: #f14668; }
       .button.is-danger.is-inverted.is-outlined.is-loading:hover::after, .button.is-danger.is-inverted.is-outlined.is-loading.is-hovered::after, .button.is-danger.is-inverted.is-outlined.is-loading:focus::after, .button.is-danger.is-inverted.is-outlined.is-loading.is-focused::after {
-        border-color: transparent transparent blue blue !important; }
+        border-color: transparent transparent #f14668 #f14668 !important; }
       .button.is-danger.is-inverted.is-outlined[disabled],
       fieldset[disabled] .button.is-danger.is-inverted.is-outlined {
         background-color: transparent;
@@ -1203,16 +1203,16 @@ a.box:active {
         box-shadow: none;
         color: #fff; }
     .button.is-danger.is-light {
-      background-color: #ebebff;
-      color: #0f0fff; }
+      background-color: #feecf0;
+      color: #cc0f35; }
       .button.is-danger.is-light:hover, .button.is-danger.is-light.is-hovered {
-        background-color: #dedeff;
+        background-color: #fde0e6;
         border-color: transparent;
-        color: #0f0fff; }
+        color: #cc0f35; }
       .button.is-danger.is-light:active, .button.is-danger.is-light.is-active {
-        background-color: #d1d1ff;
+        background-color: #fcd4dc;
         border-color: transparent;
-        color: #0f0fff; }
+        color: #cc0f35; }
   .button.is-bookmark-card {
     background-color: rgba(217, 217, 217, 0.35);
     border-color: transparent;
@@ -1525,7 +1525,7 @@ a.box:active {
 .content h4,
 .content h5,
 .content h6 {
-  color: #363636;
+  color: white;
   font-weight: 600;
   line-height: 1.125; }
 
@@ -1625,17 +1625,17 @@ a.box:active {
     padding: 0.5em 0.75em;
     vertical-align: top; }
   .content table th {
-    color: #363636; }
+    color: white; }
     .content table th:not([align]) {
       text-align: inherit; }
   .content table thead td,
   .content table thead th {
     border-width: 0 0 2px;
-    color: #363636; }
+    color: white; }
   .content table tfoot td,
   .content table tfoot th {
     border-width: 2px 0 0;
-    color: #363636; }
+    color: white; }
   .content table tbody tr:last-child td,
   .content table tbody tr:last-child th {
     border-bottom-width: 0; }
@@ -1837,11 +1837,11 @@ div.icon-text {
       background-color: #fffaeb;
       color: #946c00; }
   .notification.is-danger {
-    background-color: blue;
+    background-color: #f14668;
     color: #fff; }
     .notification.is-danger.is-light {
-      background-color: #ebebff;
-      color: #0f0fff; }
+      background-color: #feecf0;
+      color: #cc0f35; }
   .notification.is-bookmark-card {
     background-color: rgba(217, 217, 217, 0.35);
     color: findColorInvert(rgba(217, 217, 217, 0.35)); }
@@ -1868,11 +1868,11 @@ div.icon-text {
   .progress::-webkit-progress-bar {
     background-color: #ededed; }
   .progress::-webkit-progress-value {
-    background-color: #4a4a4a; }
+    background-color: white; }
   .progress::-moz-progress-bar {
-    background-color: #4a4a4a; }
+    background-color: white; }
   .progress::-ms-fill {
-    background-color: #4a4a4a;
+    background-color: white;
     border: none; }
   .progress.is-white::-webkit-progress-value {
     background-color: white; }
@@ -1947,13 +1947,13 @@ div.icon-text {
   .progress.is-warning:indeterminate {
     background-image: linear-gradient(to right, #ffe08a 30%, #ededed 30%); }
   .progress.is-danger::-webkit-progress-value {
-    background-color: blue; }
+    background-color: #f14668; }
   .progress.is-danger::-moz-progress-bar {
-    background-color: blue; }
+    background-color: #f14668; }
   .progress.is-danger::-ms-fill {
-    background-color: blue; }
+    background-color: #f14668; }
   .progress.is-danger:indeterminate {
-    background-image: linear-gradient(to right, blue 30%, #ededed 30%); }
+    background-image: linear-gradient(to right, #f14668 30%, #ededed 30%); }
   .progress.is-bookmark-card::-webkit-progress-value {
     background-color: rgba(217, 217, 217, 0.35); }
   .progress.is-bookmark-card::-moz-progress-bar {
@@ -1976,7 +1976,7 @@ div.icon-text {
     animation-name: moveIndeterminate;
     animation-timing-function: linear;
     background-color: #ededed;
-    background-image: linear-gradient(to right, #4a4a4a 30%, #ededed 30%);
+    background-image: linear-gradient(to right, white 30%, #ededed 30%);
     background-position: top left;
     background-repeat: no-repeat;
     background-size: 150% 150%; }
@@ -2001,7 +2001,7 @@ div.icon-text {
 
 .table {
   background-color: white;
-  color: #363636; }
+  color: white; }
   .table td,
   .table th {
     border: 1px solid #dbdbdb;
@@ -2055,8 +2055,8 @@ div.icon-text {
       color: rgba(0, 0, 0, 0.7); }
     .table td.is-danger,
     .table th.is-danger {
-      background-color: blue;
-      border-color: blue;
+      background-color: #f14668;
+      border-color: #f14668;
       color: #fff; }
     .table td.is-bookmark-card,
     .table th.is-bookmark-card {
@@ -2085,7 +2085,7 @@ div.icon-text {
     .table th.is-vcentered {
       vertical-align: middle; }
   .table th {
-    color: #363636; }
+    color: white; }
     .table th:not([align]) {
       text-align: left; }
   .table tr.is-selected {
@@ -2103,13 +2103,13 @@ div.icon-text {
     .table thead td,
     .table thead th {
       border-width: 0 0 2px;
-      color: #363636; }
+      color: white; }
   .table tfoot {
     background-color: transparent; }
     .table tfoot td,
     .table tfoot th {
       border-width: 2px 0 0;
-      color: #363636; }
+      color: white; }
   .table tbody {
     background-color: transparent; }
     .table tbody tr:last-child td,
@@ -2183,7 +2183,7 @@ div.icon-text {
   align-items: center;
   background-color: whitesmoke;
   border-radius: 4px;
-  color: #4a4a4a;
+  color: white;
   display: inline-flex;
   font-size: 0.75rem;
   height: 2em;
@@ -2238,11 +2238,11 @@ div.icon-text {
       background-color: #fffaeb;
       color: #946c00; }
   .tag:not(body).is-danger {
-    background-color: blue;
+    background-color: #f14668;
     color: #fff; }
     .tag:not(body).is-danger.is-light {
-      background-color: #ebebff;
-      color: #0f0fff; }
+      background-color: #feecf0;
+      color: #cc0f35; }
   .tag:not(body).is-bookmark-card {
     background-color: rgba(217, 217, 217, 0.35);
     color: findColorInvert(rgba(217, 217, 217, 0.35)); }
@@ -2319,7 +2319,7 @@ a.tag:hover {
     vertical-align: middle; }
 
 .title {
-  color: #363636;
+  color: white;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.125; }
@@ -2344,12 +2344,12 @@ a.tag:hover {
     font-size: 0.75rem; }
 
 .subtitle {
-  color: #4a4a4a;
+  color: white;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.25; }
   .subtitle strong {
-    color: #363636;
+    color: white;
     font-weight: 600; }
   .subtitle:not(.is-spaced) + .title {
     margin-top: -1.25rem; }
@@ -2394,15 +2394,15 @@ a.tag:hover {
   background-color: white;
   border-color: #dbdbdb;
   border-radius: 4px;
-  color: #363636; }
+  color: white; }
   .input::-moz-placeholder, .textarea::-moz-placeholder, .select select::-moz-placeholder {
-    color: rgba(54, 54, 54, 0.3); }
+    color: rgba(255, 255, 255, 0.3); }
   .input::-webkit-input-placeholder, .textarea::-webkit-input-placeholder, .select select::-webkit-input-placeholder {
-    color: rgba(54, 54, 54, 0.3); }
+    color: rgba(255, 255, 255, 0.3); }
   .input:-moz-placeholder, .textarea:-moz-placeholder, .select select:-moz-placeholder {
-    color: rgba(54, 54, 54, 0.3); }
+    color: rgba(255, 255, 255, 0.3); }
   .input:-ms-input-placeholder, .textarea:-ms-input-placeholder, .select select:-ms-input-placeholder {
-    color: rgba(54, 54, 54, 0.3); }
+    color: rgba(255, 255, 255, 0.3); }
   .input:hover, .textarea:hover, .select select:hover, .is-hovered.input, .is-hovered.textarea, .select select.is-hovered {
     border-color: #b5b5b5; }
   .input:focus, .textarea:focus, .select select:focus, .is-focused.input, .is-focused.textarea, .select select.is-focused, .input:active, .textarea:active, .select select:active, .is-active.input, .is-active.textarea, .select select.is-active {
@@ -2485,9 +2485,9 @@ a.tag:hover {
     .is-warning.input:focus, .is-warning.textarea:focus, .is-warning.is-focused.input, .is-warning.is-focused.textarea, .is-warning.input:active, .is-warning.textarea:active, .is-warning.is-active.input, .is-warning.is-active.textarea {
       box-shadow: 0 0 0 0.125em rgba(255, 224, 138, 0.25); }
   .is-danger.input, .is-danger.textarea {
-    border-color: blue; }
+    border-color: #f14668; }
     .is-danger.input:focus, .is-danger.textarea:focus, .is-danger.is-focused.input, .is-danger.is-focused.textarea, .is-danger.input:active, .is-danger.textarea:active, .is-danger.is-active.input, .is-danger.is-active.textarea {
-      box-shadow: 0 0 0 0.125em rgba(0, 0, 255, 0.25); }
+      box-shadow: 0 0 0 0.125em rgba(241, 70, 104, 0.25); }
   .is-bookmark-card.input, .is-bookmark-card.textarea {
     border-color: rgba(217, 217, 217, 0.35); }
     .is-bookmark-card.input:focus, .is-bookmark-card.textarea:focus, .is-bookmark-card.is-focused.input, .is-bookmark-card.is-focused.textarea, .is-bookmark-card.input:active, .is-bookmark-card.textarea:active, .is-bookmark-card.is-active.input, .is-bookmark-card.is-active.textarea {
@@ -2544,7 +2544,7 @@ a.tag:hover {
   .checkbox input, .radio input {
     cursor: pointer; }
   .checkbox:hover, .radio:hover {
-    color: #363636; }
+    color: white; }
   .checkbox[disabled], .radio[disabled],
   fieldset[disabled] .checkbox,
   fieldset[disabled] .radio,
@@ -2589,7 +2589,7 @@ a.tag:hover {
       .select select[multiple] option {
         padding: 0.5em 1em; }
   .select:not(.is-multiple):not(.is-loading):hover::after {
-    border-color: #363636; }
+    border-color: white; }
   .select.is-white:not(:hover)::after {
     border-color: white; }
   .select.is-white select {
@@ -2663,13 +2663,13 @@ a.tag:hover {
     .select.is-warning select:focus, .select.is-warning select.is-focused, .select.is-warning select:active, .select.is-warning select.is-active {
       box-shadow: 0 0 0 0.125em rgba(255, 224, 138, 0.25); }
   .select.is-danger:not(:hover)::after {
-    border-color: blue; }
+    border-color: #f14668; }
   .select.is-danger select {
-    border-color: blue; }
+    border-color: #f14668; }
     .select.is-danger select:hover, .select.is-danger select.is-hovered {
-      border-color: #0000e6; }
+      border-color: #ef2e55; }
     .select.is-danger select:focus, .select.is-danger select.is-focused, .select.is-danger select:active, .select.is-danger select.is-active {
-      box-shadow: 0 0 0 0.125em rgba(0, 0, 255, 0.25); }
+      box-shadow: 0 0 0 0.125em rgba(241, 70, 104, 0.25); }
   .select.is-bookmark-card:not(:hover)::after {
     border-color: rgba(217, 217, 217, 0.35); }
   .select.is-bookmark-card select {
@@ -2863,19 +2863,19 @@ a.tag:hover {
     border-color: transparent;
     color: rgba(0, 0, 0, 0.7); }
   .file.is-danger .file-cta {
-    background-color: blue;
+    background-color: #f14668;
     border-color: transparent;
     color: #fff; }
   .file.is-danger:hover .file-cta, .file.is-danger.is-hovered .file-cta {
-    background-color: #0000f2;
+    background-color: #f03a5f;
     border-color: transparent;
     color: #fff; }
   .file.is-danger:focus .file-cta, .file.is-danger.is-focused .file-cta {
     border-color: transparent;
-    box-shadow: 0 0 0.5em rgba(0, 0, 255, 0.25);
+    box-shadow: 0 0 0.5em rgba(241, 70, 104, 0.25);
     color: #fff; }
   .file.is-danger:active .file-cta, .file.is-danger.is-active .file-cta {
-    background-color: #0000e6;
+    background-color: #ef2e55;
     border-color: transparent;
     color: #fff; }
   .file.is-bookmark-card .file-cta {
@@ -2981,12 +2981,12 @@ a.tag:hover {
   position: relative; }
   .file-label:hover .file-cta {
     background-color: #eeeeee;
-    color: #363636; }
+    color: white; }
   .file-label:hover .file-name {
     border-color: #d5d5d5; }
   .file-label:active .file-cta {
     background-color: #e8e8e8;
-    color: #363636; }
+    color: white; }
   .file-label:active .file-name {
     border-color: #cfcfcf; }
 
@@ -3010,7 +3010,7 @@ a.tag:hover {
 
 .file-cta {
   background-color: whitesmoke;
-  color: #4a4a4a; }
+  color: white; }
 
 .file-name {
   border-color: #dbdbdb;
@@ -3033,7 +3033,7 @@ a.tag:hover {
     font-size: 14px; }
 
 .label {
-  color: #363636;
+  color: white;
   display: block;
   font-size: 1rem;
   font-weight: 700; }
@@ -3069,7 +3069,7 @@ a.tag:hover {
   .help.is-warning {
     color: #ffe08a; }
   .help.is-danger {
-    color: blue; }
+    color: #f14668; }
   .help.is-bookmark-card {
     color: rgba(217, 217, 217, 0.35); }
   .help.is-bookmark-container {
@@ -3215,7 +3215,7 @@ a.tag:hover {
   .control.has-icons-left .input:focus ~ .icon,
   .control.has-icons-left .select:focus ~ .icon, .control.has-icons-right .input:focus ~ .icon,
   .control.has-icons-right .select:focus ~ .icon {
-    color: #4a4a4a; }
+    color: white; }
   .control.has-icons-left .input.is-small ~ .icon,
   .control.has-icons-left .select.is-small ~ .icon, .control.has-icons-right .input.is-small ~ .icon,
   .control.has-icons-right .select.is-small ~ .icon {
@@ -3276,7 +3276,7 @@ a.tag:hover {
     .breadcrumb li:first-child a {
       padding-left: 0; }
     .breadcrumb li.is-active a {
-      color: #363636;
+      color: white;
       cursor: default;
       pointer-events: none; }
     .breadcrumb li + li::before {
@@ -3317,7 +3317,7 @@ a.tag:hover {
   background-color: white;
   border-radius: 0.25rem;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
-  color: #4a4a4a;
+  color: white;
   max-width: 100%;
   position: relative; }
 
@@ -3337,7 +3337,7 @@ a.tag:hover {
 
 .card-header-title {
   align-items: center;
-  color: #363636;
+  color: white;
   display: flex;
   flex-grow: 1;
   font-weight: 700;
@@ -3428,7 +3428,7 @@ a.tag:hover {
   padding-top: 0.5rem; }
 
 .dropdown-item {
-  color: #4a4a4a;
+  color: white;
   display: block;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -3587,12 +3587,12 @@ button.dropdown-item {
   line-height: 1.25; }
   .menu-list a {
     border-radius: 2px;
-    color: #4a4a4a;
+    color: white;
     display: block;
     padding: 0.5em 0.75em; }
     .menu-list a:hover {
       background-color: whitesmoke;
-      color: #363636; }
+      color: white; }
     .menu-list a.is-active {
       background-color: #485fc7;
       color: #fff; }
@@ -3695,13 +3695,13 @@ button.dropdown-item {
       border-color: #ffe08a;
       color: #946c00; }
   .message.is-danger {
-    background-color: #ebebff; }
+    background-color: #feecf0; }
     .message.is-danger .message-header {
-      background-color: blue;
+      background-color: #f14668;
       color: #fff; }
     .message.is-danger .message-body {
-      border-color: blue;
-      color: #0f0fff; }
+      border-color: #f14668;
+      color: #cc0f35; }
   .message.is-bookmark-card {
     background-color: rgba(245, 245, 245, 0.35); }
     .message.is-bookmark-card .message-header {
@@ -3721,9 +3721,9 @@ button.dropdown-item {
 
 .message-header {
   align-items: center;
-  background-color: #4a4a4a;
+  background-color: white;
   border-radius: 4px 4px 0 0;
-  color: #fff;
+  color: rgba(0, 0, 0, 0.7);
   display: flex;
   font-weight: 700;
   justify-content: space-between;
@@ -3744,7 +3744,7 @@ button.dropdown-item {
   border-radius: 4px;
   border-style: solid;
   border-width: 0 0 0 4px;
-  color: #4a4a4a;
+  color: white;
   padding: 1.25em 1.5em; }
   .message-body code,
   .message-body pre {
@@ -3811,7 +3811,7 @@ button.dropdown-item {
   border-top-right-radius: 6px; }
 
 .modal-card-title {
-  color: #363636;
+  color: white;
   flex-grow: 1;
   flex-shrink: 0;
   font-size: 1.5rem;
@@ -4243,7 +4243,7 @@ button.dropdown-item {
         background-color: #ffe08a;
         color: rgba(0, 0, 0, 0.7); } }
   .navbar.is-danger {
-    background-color: blue;
+    background-color: #f14668;
     color: #fff; }
     .navbar.is-danger .navbar-brand > .navbar-item,
     .navbar.is-danger .navbar-brand .navbar-link {
@@ -4252,7 +4252,7 @@ button.dropdown-item {
     .navbar.is-danger .navbar-brand .navbar-link:focus,
     .navbar.is-danger .navbar-brand .navbar-link:hover,
     .navbar.is-danger .navbar-brand .navbar-link.is-active {
-      background-color: #0000e6;
+      background-color: #ef2e55;
       color: #fff; }
     .navbar.is-danger .navbar-brand .navbar-link::after {
       border-color: #fff; }
@@ -4274,7 +4274,7 @@ button.dropdown-item {
       .navbar.is-danger .navbar-end .navbar-link:focus,
       .navbar.is-danger .navbar-end .navbar-link:hover,
       .navbar.is-danger .navbar-end .navbar-link.is-active {
-        background-color: #0000e6;
+        background-color: #ef2e55;
         color: #fff; }
       .navbar.is-danger .navbar-start .navbar-link::after,
       .navbar.is-danger .navbar-end .navbar-link::after {
@@ -4282,10 +4282,10 @@ button.dropdown-item {
       .navbar.is-danger .navbar-item.has-dropdown:focus .navbar-link,
       .navbar.is-danger .navbar-item.has-dropdown:hover .navbar-link,
       .navbar.is-danger .navbar-item.has-dropdown.is-active .navbar-link {
-        background-color: #0000e6;
+        background-color: #ef2e55;
         color: #fff; }
       .navbar.is-danger .navbar-dropdown a.navbar-item.is-active {
-        background-color: blue;
+        background-color: #f14668;
         color: #fff; } }
   .navbar.is-bookmark-card {
     background-color: rgba(217, 217, 217, 0.35);
@@ -4421,7 +4421,7 @@ body.has-navbar-fixed-bottom {
   overflow-y: hidden; }
 
 .navbar-burger {
-  color: #4a4a4a;
+  color: white;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -4464,7 +4464,7 @@ body.has-navbar-fixed-bottom {
 
 .navbar-item,
 .navbar-link {
-  color: #4a4a4a;
+  color: white;
   display: block;
   line-height: 1.5;
   padding: 0.5rem 0.75rem;
@@ -4755,7 +4755,7 @@ a.navbar-item,
 .pagination-next,
 .pagination-link {
   border-color: #dbdbdb;
-  color: #363636;
+  color: white;
   min-width: 2.5em; }
   .pagination-previous:hover,
   .pagination-next:hover,
@@ -4917,12 +4917,12 @@ a.navbar-item,
   .panel.is-warning .panel-block.is-active .panel-icon {
     color: #ffe08a; }
   .panel.is-danger .panel-heading {
-    background-color: blue;
+    background-color: #f14668;
     color: #fff; }
   .panel.is-danger .panel-tabs a.is-active {
-    border-bottom-color: blue; }
+    border-bottom-color: #f14668; }
   .panel.is-danger .panel-block.is-active .panel-icon {
-    color: blue; }
+    color: #f14668; }
   .panel.is-bookmark-card .panel-heading {
     background-color: rgba(217, 217, 217, 0.35);
     color: findColorInvert(rgba(217, 217, 217, 0.35)); }
@@ -4945,7 +4945,7 @@ a.navbar-item,
 .panel-heading {
   background-color: #ededed;
   border-radius: 6px 6px 0 0;
-  color: #363636;
+  color: white;
   font-size: 1.25em;
   font-weight: 700;
   line-height: 1.25;
@@ -4965,13 +4965,13 @@ a.navbar-item,
       color: #363636; }
 
 .panel-list a {
-  color: #4a4a4a; }
+  color: white; }
   .panel-list a:hover {
     color: #485fc7; }
 
 .panel-block {
   align-items: center;
-  color: #363636;
+  color: white;
   display: flex;
   justify-content: flex-start;
   padding: 0.5em 0.75em; }
@@ -5027,15 +5027,15 @@ label.panel-block {
     border-bottom-color: #dbdbdb;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    color: #4a4a4a;
+    color: white;
     display: flex;
     justify-content: center;
     margin-bottom: -1px;
     padding: 0.5em 1em;
     vertical-align: top; }
     .tabs a:hover {
-      border-bottom-color: #363636;
-      color: #363636; }
+      border-bottom-color: white;
+      color: white; }
   .tabs li {
     display: block; }
     .tabs li.is-active a {
@@ -6486,31 +6486,31 @@ a.has-text-warning-dark:hover, a.has-text-warning-dark:focus {
   background-color: #946c00 !important; }
 
 .has-text-danger {
-  color: blue !important; }
+  color: #f14668 !important; }
 
 a.has-text-danger:hover, a.has-text-danger:focus {
-  color: #0000cc !important; }
+  color: #ee1742 !important; }
 
 .has-background-danger {
-  background-color: blue !important; }
+  background-color: #f14668 !important; }
 
 .has-text-danger-light {
-  color: #ebebff !important; }
+  color: #feecf0 !important; }
 
 a.has-text-danger-light:hover, a.has-text-danger-light:focus {
-  color: #b8b8ff !important; }
+  color: #fabdc9 !important; }
 
 .has-background-danger-light {
-  background-color: #ebebff !important; }
+  background-color: #feecf0 !important; }
 
 .has-text-danger-dark {
-  color: #0f0fff !important; }
+  color: #cc0f35 !important; }
 
 a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
-  color: #4242ff !important; }
+  color: #ee2049 !important; }
 
 .has-background-danger-dark {
-  background-color: #0f0fff !important; }
+  background-color: #cc0f35 !important; }
 
 .has-text-bookmark-card {
   color: rgba(217, 217, 217, 0.35) !important; }
@@ -8200,7 +8200,7 @@ a.has-text-bookmark-container-dark:hover, a.has-text-bookmark-container-dark:foc
         .hero.is-warning.is-bold .navbar-menu {
           background-image: linear-gradient(141deg, #ffb657 0%, #ffe08a 71%, #fff6a3 100%); } }
   .hero.is-danger {
-    background-color: blue;
+    background-color: #f14668;
     color: #fff; }
     .hero.is-danger a:not(.button):not(.dropdown-item):not(.tag):not(.pagination-link.is-current),
     .hero.is-danger strong {
@@ -8214,14 +8214,14 @@ a.has-text-bookmark-container-dark:hover, a.has-text-bookmark-container-dark:foc
         color: #fff; }
     @media screen and (max-width: 1023px) {
       .hero.is-danger .navbar-menu {
-        background-color: blue; } }
+        background-color: #f14668; } }
     .hero.is-danger .navbar-item,
     .hero.is-danger .navbar-link {
       color: rgba(255, 255, 255, 0.7); }
     .hero.is-danger a.navbar-item:hover, .hero.is-danger a.navbar-item.is-active,
     .hero.is-danger .navbar-link:hover,
     .hero.is-danger .navbar-link.is-active {
-      background-color: #0000e6;
+      background-color: #ef2e55;
       color: #fff; }
     .hero.is-danger .tabs a {
       color: #fff;
@@ -8229,7 +8229,7 @@ a.has-text-bookmark-container-dark:hover, a.has-text-bookmark-container-dark:foc
       .hero.is-danger .tabs a:hover {
         opacity: 1; }
     .hero.is-danger .tabs li.is-active a {
-      color: blue !important;
+      color: #f14668 !important;
       opacity: 1; }
     .hero.is-danger .tabs.is-boxed a, .hero.is-danger .tabs.is-toggle a {
       color: #fff; }
@@ -8238,12 +8238,12 @@ a.has-text-bookmark-container-dark:hover, a.has-text-bookmark-container-dark:foc
     .hero.is-danger .tabs.is-boxed li.is-active a, .hero.is-danger .tabs.is-boxed li.is-active a:hover, .hero.is-danger .tabs.is-toggle li.is-active a, .hero.is-danger .tabs.is-toggle li.is-active a:hover {
       background-color: #fff;
       border-color: #fff;
-      color: blue; }
+      color: #f14668; }
     .hero.is-danger.is-bold {
-      background-image: linear-gradient(141deg, #0022cc 0%, blue 71%, #401aff 100%); }
+      background-image: linear-gradient(141deg, #fa0a62 0%, #f14668 71%, #f7595f 100%); }
       @media screen and (max-width: 768px) {
         .hero.is-danger.is-bold .navbar-menu {
-          background-image: linear-gradient(141deg, #0022cc 0%, blue 71%, #401aff 100%); } }
+          background-image: linear-gradient(141deg, #fa0a62 0%, #f14668 71%, #f7595f 100%); } }
   .hero.is-bookmark-card {
     background-color: rgba(217, 217, 217, 0.35);
     color: findColorInvert(rgba(217, 217, 217, 0.35)); }
