@@ -15,11 +15,32 @@
 				</p>
 			</div>
 			
-			<button class='invisible-button is-size-2 is-flex'>
+			<button class='invisible-button is-size-2 is-flex js-modal-trigger' data-target="modal-js-example">
 				<Icon icon='mdi:people' />
 			</button>
 			<!-- modal or drop down menu for this? -->
 		</div>
+		
+		<div id="modal-js-example" class="modal">
+			<div class="modal-background"></div>
+			<div class="modal-content">
+				<div class="box has-background-bookmark-container">
+					<div class="columns is-multiline">
+						<div class="column is-half is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
+							<h1 class="title">Join a Room</h1>
+							<input class="input" type="text" placeholder="Room Code">
+						</div>
+						<div class="column is-half is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
+							<h1 class="title">Create a Room</h1>
+							<button class="button">Generate Room</button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<button class="modal-close is-large" aria-label="close"></button>
+		</div>
+		
 </main>
 
 <!-- CSS. -->
@@ -36,6 +57,7 @@
 <!-- TypeScript. -->
 <script lang='ts'>
 	import Icon from '@iconify/svelte';
+	import { onMount } from 'svelte';
 
 	// Search bar.
 	let search_input: HTMLInputElement;
@@ -86,4 +108,48 @@
 			window.open(url, '_self');
 		}
 	}
+
+	onMount (() => {
+		function openModal($el : any) {
+			$el.classList.add('is-active');
+		}
+
+		function closeModal($el : any) {
+			$el.classList.remove('is-active');
+		}
+
+		function closeAllModals() {
+			(document.querySelectorAll('.modal') || []).forEach(($modal) => {
+				closeModal($modal);
+			});
+		}
+
+		// Add a click event on buttons to open a specific modal
+		(document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+			const modal_cast = $trigger as HTMLElement;
+			const modal : any = modal_cast.dataset.target;
+			const $target = document.getElementById(modal);
+
+			$trigger.addEventListener('click', () => {
+				openModal($target);
+				console.log("nuts")
+			});
+		});
+
+		// Add a click event on various child elements to close the parent modal
+		(document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+			const $target = $close.closest('.modal');
+
+			$close.addEventListener('click', () => {
+				closeModal($target);
+			});
+		});
+
+		// Add a keyboard event to close all modals
+		document.addEventListener('keydown', (event) => {
+			if (event.code === 'Escape') {
+				closeAllModals();
+			}
+		});
+	});
 </script>
