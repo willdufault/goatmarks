@@ -23,11 +23,11 @@
 	}
 	export let bookmarks : bookmark[] = [
 		{
-			url: 'google.com',
+			url: 'https://google.com',
 			name: 'Google'
 		},
 		{
-			url: 'bulma.io',
+			url: 'https://bulma.io',
 			name: 'Bulma'
 		}
 	]
