@@ -1,5 +1,7 @@
 <!-- HTML. -->
-<main></main>
+<main>
+    <h1>nuts</h1>
+</main>
 
 <!-- CSS. -->
 <style></style>
