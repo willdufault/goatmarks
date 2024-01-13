@@ -1,7 +1,13 @@
 .borderify {
 	border: 5px solid red;
 }
+
 body{
     background-color: #2F4858;
     height: 100vh;
+}
+
+.card-image:first-child img {
+    border-top-left-radius: 9999px !important; 
+    border-top-right-radius: 9999px !important; 
 }
