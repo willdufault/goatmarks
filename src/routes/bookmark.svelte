@@ -13,6 +13,25 @@
 				<p>{name}</p>
 			</div>
 		</a>
+		<div class="dropdown is-hoverable">
+			<div class="dropdown-trigger">
+			  <button class="button is-ghost" aria-haspopup="true" aria-controls="dropdown-menu2">
+				<span class="icon is-small">
+				  <img src="./images/Kebab.svg" alt="Kebab">
+				</span>
+			  </button>
+			</div>
+			<div class="dropdown-menu" id="dropdown-menu2" role="menu">
+			  <div class="dropdown-content has-background-bookmark-card">
+				<div class="dropdown-item">
+					<p>Edit Bookmark</p>
+				</div>
+				<div class="dropdown-item">
+					<p>Delete Bookmark</p>
+				</div>
+			  </div>
+			</div>
+		  </div>
 	</div>
 </main>
 
@@ -21,6 +40,23 @@
 	.card {
 		border-radius: 30px;
 	}
+
+	.dropdown {
+		position: absolute;
+		top: 0%;
+		right: 0%;
+		visibility: hidden;
+	}
+
+	.card:hover .dropdown{
+		visibility: visible;
+	}
+
+	.dropdown button {
+		border-radius: 9999px;
+		border-color: none;
+	}
+	
 </style>
 
 <!-- TypeScript. -->
