@@ -10,9 +10,9 @@
 
 				 -->
 
-				<button class='button'>suck</button>
-				<button class='button'>my</button>
-				<button class='button'>nuts</button>
+				<button class='button is-white is-outlined'>suck</button>
+				<button class='button is-white is-outlined'>my</button>
+				<button class='button is-white is-outlined'>nuts</button>
 			</div>
 		</div>
 </main>

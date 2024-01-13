@@ -1,5 +1,6 @@
 <!-- HTML. -->
 <main>
+	<Header></Header>
 	<div class="container p-3 borderify">
 		<div class="container m-1 borderify">
 			<NavigationBar></NavigationBar>
@@ -20,7 +21,8 @@
 
 <!-- TypeScript. -->
 <script lang='ts'>
-	import Bookmarks from './bookmarks.svelte';
+	import Header from './header.svelte';
 	import NavigationBar from './navigation-bar.svelte';
+	import Bookmarks from './bookmarks.svelte';
 	import Clock from './clock.svelte';
 </script>
