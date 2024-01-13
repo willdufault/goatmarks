@@ -1,10 +1,10 @@
 <!-- HTML. -->
 <main>
 	<a href={url}>
-		<div class="card">
+		<div class="card has-background-bookmark-card">
 			<div class="card-image p-3 is-flex is-justify-content-center">
 				<figure class="image is-48x48">
-					<img src="{image_url}" alt="Bookmark Icon">
+					<img class="is-rounded" src="{image_url}" alt="Bookmark Icon">
 				</figure>
 			</div>
 			<div class="card-content is-flex is-justify-content-center py-0">
