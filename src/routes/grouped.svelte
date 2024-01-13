@@ -1,6 +1,6 @@
 <!-- HTML. -->
-<main class='height-100'>
-	<div class="height-100 has-background-bookmark-container rounded-25 columns is-multiline m-0">
+<main class='height-100  rounded-25 no-overflow'>
+	<div class="height-100 has-background-bookmark-container columns is-multiline m-0 scrollable">
 		{#each bookmarks as bm}
 			<div class="column is-4">
 				<Bookmark name={bm.name} url={bm.url}></Bookmark>

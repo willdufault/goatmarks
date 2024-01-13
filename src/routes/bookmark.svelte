@@ -24,10 +24,10 @@
 			<div class="dropdown-menu" id="dropdown-menu2" role="menu">
 			  <div class="dropdown-content has-background-bookmark-card">
 				<div class="dropdown-item">
-					<p>Edit Bookmark</p>
+					<p>Edit</p>
 				</div>
 				<div class="dropdown-item">
-					<p>Delete Bookmark</p>
+					<p>Delete</p>
 				</div>
 			  </div>
 			</div>
@@ -47,8 +47,12 @@
 	.dropdown {
 		position: absolute;
 		top: 0%;
-		right: 0%;
+		left: 0%;
 		visibility: hidden;
+	}
+
+	.dropdown-menu {
+		min-width: fit-content !important;
 	}
 
 	.card:hover .dropdown{

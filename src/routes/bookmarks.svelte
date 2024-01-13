@@ -1,8 +1,8 @@
 <!-- HTML. -->
-<main class='height-100'>
-	<div class='height-100 container has-background-bookmark-container rounded-25'>
+<main class='height-100 rounded-25 no-overflow'>
+	<div class='height-100 container has-background-bookmark-container p-3 scrollable'>
 		
-		<div class="columns height-100 is-multiline m-0">
+		<div class="columns is-multiline m-0">
 			{#each bookmarks as bm}
 				<div class="column is-2">
 					<Bookmark name={bm.name} url={bm.url}></Bookmark>
@@ -44,6 +44,78 @@
 		name: string
 	}
 	let bookmarks : bookmark[] = [
+		{
+			url: 'https://google.com',
+			name: 'Google'
+		},
+		{
+			url: 'https://bulma.io',
+			name: 'Bulma'
+		},
+		{
+			url: 'https://google.com',
+			name: 'Google'
+		},
+		{
+			url: 'https://bulma.io',
+			name: 'Bulma'
+		},
+		{
+			url: 'https://google.com',
+			name: 'Google'
+		},
+		{
+			url: 'https://bulma.io',
+			name: 'Bulma'
+		},
+		{
+			url: 'https://google.com',
+			name: 'Google'
+		},
+		{
+			url: 'https://bulma.io',
+			name: 'Bulma'
+		},
+		{
+			url: 'https://google.com',
+			name: 'Google'
+		},
+		{
+			url: 'https://bulma.io',
+			name: 'Bulma'
+		},
+		{
+			url: 'https://google.com',
+			name: 'Google'
+		},
+		{
+			url: 'https://bulma.io',
+			name: 'Bulma'
+		},
+		{
+			url: 'https://google.com',
+			name: 'Google'
+		},
+		{
+			url: 'https://bulma.io',
+			name: 'Bulma'
+		},
+		{
+			url: 'https://google.com',
+			name: 'Google'
+		},
+		{
+			url: 'https://bulma.io',
+			name: 'Bulma'
+		},
+		{
+			url: 'https://google.com',
+			name: 'Google'
+		},
+		{
+			url: 'https://bulma.io',
+			name: 'Bulma'
+		},
 		{
 			url: 'https://google.com',
 			name: 'Google'
