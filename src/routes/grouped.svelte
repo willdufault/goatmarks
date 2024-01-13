@@ -3,7 +3,7 @@
 	<div class="has-background-bookmark-container rounded-25 columns is-multiline m-0">
 		{#each bookmarks as bm}
 			<div class="column is-4">
-				<Bookmark name={bm.name} url={bm.url} active={true}></Bookmark>
+				<Bookmark name={bm.name} url={bm.url}></Bookmark>
 			</div>
 		{/each}
 	</div>
