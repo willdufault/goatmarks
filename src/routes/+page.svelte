@@ -5,7 +5,7 @@
 		<div class="container m-1">
 			<NavigationBar></NavigationBar>
 		</div>
-		<div class="columns m-1 is-variable is-4">
+		<div class="columns m-1 is-variable is-2">
 			<div class="column is-8 has-background-bookmark-container">
 				<Bookmarks></Bookmarks>
 			</div>
