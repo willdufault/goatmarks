@@ -1,6 +1,6 @@
 <!-- HTML. -->
 <main>
-    <div class='container is-flex is-justify-content-space-between'>
+    <div class='has-background-bookmark-container p-4 mx-4 container is-flex is-justify-content-space-between rounded'>
 			<!-- <input bind:this={search_input} type='text' placeholder='Search Google or type a URL.	' on:keypress={search}> -->
 			
 			<div class="field mb-0">
@@ -26,6 +26,10 @@
 <style>
 	.google-search-bar {
 		width: 40rem;
+	}
+
+	.rounded {
+		border-radius: 25px;
 	}
 </style>
 
@@ -79,7 +83,7 @@
 			let url = validURL(query) ? `https://${query}` : `https://google.com/search?q=${query}`;
 
 			// Open the url in a new tab.
-			window.open(url);
+			window.open(url, '_self');
 		}
 	}
 </script>
