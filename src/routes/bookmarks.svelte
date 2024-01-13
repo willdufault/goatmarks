@@ -1,8 +1,8 @@
 <!-- HTML. -->
-<main>
-	<div class='container has-background-bookmark-container rounded-25'>
+<main class='height-100'>
+	<div class='height-100 container has-background-bookmark-container rounded-25'>
 		
-		<div class="columns is-multiline m-0">
+		<div class="columns height-100 is-multiline m-0">
 			{#each bookmarks as bm}
 				<div class="column is-2">
 					<Bookmark name={bm.name} url={bm.url}></Bookmark>

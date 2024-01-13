@@ -5,11 +5,11 @@
 		<div class="container m-0 pb-3">
 			<NavigationBar></NavigationBar>
 		</div>
-		<div class="columns m-0 is-variable is-3">
-			<div class="column is-8">
+		<div class="columns height-100 m-0 is-variable is-3">
+			<div class="column height-100 is-flex is-flex-direction-column is-8">
 				<Bookmarks></Bookmarks>
 			</div>
-			<div class="column is-4 is-flex is-flex-direction-column gap-1-5rem">
+			<div class="column height-100 is-4 is-flex is-flex-direction-column gap-1-5rem">
 				<Clock></Clock>
 				<Grouped></Grouped>
 			</div>
@@ -20,13 +20,14 @@
 	<img class="background-img" id="TR" src="./images/Background TR.svg" alt="beans">
 	<img class="background-img" id="BR" src="./images/Background BR.svg" alt="beans">
 </main>
-
-<!-- CSS. -->
+	
+	<!-- CSS. -->
 <style>
 	.column {
 		background-clip: content-box;
 		border-radius: 50px;
 	}
+
 	.background-img {
 		position: fixed;
 		z-index: 0;
@@ -42,7 +43,8 @@
 	img#BR { top: 70%; right: 0%; }
 
 	#page-content {
-		z-index: 1;
+			z-index: 1;
+			height: 77vh
 	}
 
 </style>

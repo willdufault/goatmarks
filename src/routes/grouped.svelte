@@ -1,6 +1,6 @@
 <!-- HTML. -->
-<main>
-	<div class="has-background-bookmark-container rounded-25 columns is-multiline m-0">
+<main class='height-100'>
+	<div class="height-100 has-background-bookmark-container rounded-25 columns is-multiline m-0">
 		{#each bookmarks as bm}
 			<div class="column is-4">
 				<Bookmark name={bm.name} url={bm.url}></Bookmark>
@@ -22,46 +22,6 @@
 		name: string
 	}
 	export let bookmarks : bookmark[] = [
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		},
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		},
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		},
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		},
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		},
 		{
 			url: 'https://google.com',
 			name: 'Google'
