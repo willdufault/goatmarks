@@ -3,8 +3,7 @@
 	<div class='card'>
 		<div class="card-image p-3">
 			<figure class="image is-48x48">
-				<!-- svelte-ignore a11y-img-redundant-alt -->
-				<img src="{image_url}" alt="Image">
+				<img src="{image_url}" alt="Bookmark Icon">
 			</figure>
 		</div>
 	</div>
