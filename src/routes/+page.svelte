@@ -16,11 +16,7 @@
 </main>
 
 <!-- CSS. -->
-<style>
-	.borderify {
-		border: 5px solid red;
-	}
-</style>
+<style></style>
 
 <!-- TypeScript. -->
 <script lang='ts'>
