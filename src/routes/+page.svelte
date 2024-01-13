@@ -2,7 +2,7 @@
 <main>
 	<h1 class='title'>title</h1>
 	<button class='button is-danger'>button</button>
-	<Test></Test>
+	<Bookmarks></Bookmarks>
 </main>
 
 <!-- CSS. -->
@@ -10,5 +10,5 @@
 
 <!-- TypeScript. -->
 <script lang='ts'>
-	import Test from './test.svelte';
+	import Bookmarks from './bookmarks.svelte';
 </script>

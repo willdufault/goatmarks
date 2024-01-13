@@ -1,1 +1,0 @@
-<button class='button is-danger'>sub-component</button>
