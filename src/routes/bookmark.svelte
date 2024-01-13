@@ -17,7 +17,7 @@
 			<div class="dropdown-trigger">
 			  <button class="button is-ghost" aria-haspopup="true" aria-controls="dropdown-menu2">
 				<span class="icon is-small">
-				  <img src="./images/Kebab.svg" alt="Kebab">
+				  <img class="kebab" src="./images/Kebab.svg" alt="Kebab">
 				</span>
 			  </button>
 			</div>
@@ -37,6 +37,9 @@
 
 <!-- CSS. -->
 <style>
+	.kebab {
+		filter: brightness(0) invert(1);
+	}
 	.card {
 		border-radius: 30px;
 	}
@@ -49,6 +52,7 @@
 	}
 
 	.card:hover .dropdown{
+		/* transition: all 0.2s ease 1s; */
 		visibility: visible;
 	}
 
