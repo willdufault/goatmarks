@@ -2,7 +2,7 @@
 <main>
 	<div class="container p-3 borderify">
 		<div class="container m-1 borderify">
-			<NavBar></NavBar>
+			<NavigationBar></NavigationBar>
 		</div>
 		<div class="columns m-1">
 			<div class="column is-8 borderify">
@@ -25,6 +25,6 @@
 <!-- TypeScript. -->
 <script lang='ts'>
 	import Bookmarks from './bookmarks.svelte';
-	import NavBar from './navigation-bar.svelte';
+	import NavigationBar from './navigation-bar.svelte';
 	import Clock from './clock.svelte';
 </script>
