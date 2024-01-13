@@ -1,6 +1,6 @@
 <!-- HTML. -->
 <main>
-    <div class='has-background-bookmark-container p-4 mx-4 container is-flex is-justify-content-space-between rounded'>
+    <div class='has-background-bookmark-container p-4 mx-3 container is-flex is-justify-content-space-between rounded'>
 			<!-- <input bind:this={search_input} type='text' placeholder='Search Google or type a URL.	' on:keypress={search}> -->
 			
 			<div class="field mb-0">

@@ -1,6 +1,6 @@
 <!-- HTML. -->
 <main>
-	<div class='has-background-bookmark-container rounded-25 container is-flex is-justify-content-center is-align-items-center p-5'>
+	<div class='has-background-bookmark-container rounded-25 container is-flex is-justify-content-center is-align-items-center p-4'>
 		<h1 class='title time-big is-1 pr-2 mb-0'>{hours}:{minutes}</h1>
 		<div>
 			<div class='time-small'>

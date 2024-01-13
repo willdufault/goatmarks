@@ -1,6 +1,6 @@
 <!-- HTML. -->
 <main>
-	<div class="has-background-bookmark-container rounded-25 columns is-multiline m-1">
+	<div class="has-background-bookmark-container rounded-25 columns is-multiline m-0">
 		{#each bookmarks as bm}
 			<div class="column is-2">
 				<Bookmark name={bm.name} url={bm.url}></Bookmark>

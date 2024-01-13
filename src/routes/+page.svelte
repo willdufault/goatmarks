@@ -2,14 +2,14 @@
 <main>
 	<Header></Header>
 	<div id="page-content" class="container p-3">
-		<div class="container m-1">
+		<div class="container m-0 pb-3">
 			<NavigationBar></NavigationBar>
 		</div>
-		<div class="columns m-1 is-variable is-2">
+		<div class="columns m-0 is-variable is-3">
 			<div class="column is-8">
 				<Bookmarks></Bookmarks>
 			</div>
-			<div class="column is-4">
+			<div class="column is-4 is-flex is-flex-direction-column gap-1-5rem">
 				<Clock></Clock>
 				<Grouped></Grouped>
 			</div>
@@ -31,6 +31,11 @@
 		position: fixed;
 		z-index: 0;
 	}
+
+	.gap-1-5rem {
+		gap: 1.5rem
+	}
+
 	img#TL { top: 22%; }
 	img#BL { top: 75%; }
 	img#TR { top: 25%; right: 0%; }
