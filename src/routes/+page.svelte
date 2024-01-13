@@ -1,8 +1,8 @@
 <!-- HTML. -->
 <main>
 	<Header></Header>
-	<div class="container p-3 borderify">
-		<div class="container m-1 borderify">
+	<div id="page-content" class="container p-3">
+		<div class="container m-1">
 			<NavigationBar></NavigationBar>
 		</div>
 		<div class="columns m-1 is-variable is-4">
@@ -14,6 +14,10 @@
 			</div>
 		</div>
 	</div>
+	<img class="background-img" id="TL" src="./images/Background TL.svg" alt="beans">
+	<img class="background-img" id="BL" src="./images/Background BL.svg" alt="beans">
+	<img class="background-img" id="TR" src="./images/Background TR.svg" alt="beans">
+	<img class="background-img" id="BR" src="./images/Background BR.svg" alt="beans">
 </main>
 
 <!-- CSS. -->
@@ -22,6 +26,19 @@
 		background-clip: content-box;
 		border-radius: 50px;
 	}
+	.background-img {
+		position: fixed;
+		z-index: 0;
+	}
+	img#TL { top: 22%; }
+	img#BL { top: 75%; }
+	img#TR { top: 25%; right: 0%; }
+	img#BR { top: 70%; right: 0%; }
+
+	#page-content {
+		z-index: 1;
+	}
+
 </style>
 
 <!-- TypeScript. -->
