@@ -1,7 +1,7 @@
 <!-- HTML. -->
 <main class='height-100 has-background-bookmark-container rounded-25 no-overflow'>
-	<div class="height-100 has-background-bookmark-container columns is-multiline m-0 scrollable">
-		<div style={$is_in_group && $is_logged_in ? "" : "display: none;"}>
+	<div class="height-100 has-background-bookmark-container scrollable">
+		<div class='columns is-multiline m-0' style={$is_in_group && $is_logged_in ? "" : "display: none;"}>
 			{#each $group_bookmarks as gr}
 				<div class="column is-4">
 					<Bookmark name={gr.name} url={gr.url} group={true}></Bookmark>
@@ -69,6 +69,7 @@
 		outline-offset: -5px;
 		outline-color: #88929a;
 	}
+	
 	.plus {
 		filter: invert(66%) sepia(10%) saturate(338%) hue-rotate(164deg)
 		brightness(86%) contrast(85%);
@@ -114,6 +115,7 @@
 		if (status == 200) {
 			const group_response : any[] = await response.json();
 			let update: bookmark[] = [];
+			console.log('group response:')
 			console.log(group_response)
 			let bookmarks_response : {}[] = group_response[1]
 			for (let i = 0; i < bookmarks_response.length; i++) {
