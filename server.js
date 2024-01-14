@@ -78,10 +78,10 @@ app.post('/register', async (req, res) => {
     if (index.length === 0) {
       console.log("Username does not exist")
       await new_user.save();
-      res.send(data_string["username"]);
+      res.status(200).send(data_string["username"]);
     } else {
       console.log("Username already exists")
-      res.send(false);
+      res.status(400).send("Username already exists");
     }
   } catch (error) {
     console.log("Ran into error in register")
@@ -107,13 +107,11 @@ app.post('/login', async (req, res) => {
 
   try {
     if (index.length === 0) {
-      console.log("Username does not exist")
-      await new_user.save();
-      res.send(false);
+      res.status(400).send("Username does not exist");
     } else {
       console.log("Username found")
       if (index[0]["password"] == data_string["password"]) {
-        res.send(true);
+        res.status(200).send(data_string["username"]);
       }
     }
   } catch (error) {
@@ -157,10 +155,12 @@ app.post('/createGroup', async (req, res) => {
       name: data_string["name"],
       code: rand,
     })
+    console.log("After new group")
 
     await new_group.save();
+    console.log("After new group save")
 
-    res.send(true);
+    res.status(200).send([data_string["name"], rand]);
 
   } catch (error) {
     console.log("Ran into error in createGroup")
@@ -208,7 +208,13 @@ app.post('/addBmarkUser', async (req, res) => {
       }, {
         "multi": true
       })
-      res.send(true);
+
+      let index = await user.find({
+        username: data_string["username"]
+      });
+      console.log(index);
+
+      res.status(200).send(index[0]["bookmarks"]);
     }
   } catch (error) {
     console.log("Ran into error in addBmarkUser")
@@ -256,7 +262,12 @@ app.post('/addBmarkGroup', async (req, res) => {
       }, {
         "multi": true
       })
-      res.send(true);
+
+      let index = await group.find({
+        code: data_string["code"]
+      });
+
+      res.status(200).send([data_string["code"], index[0]["bookmarks"]]);
     }
   } catch (error) {
     console.log("Ran into error in addBmarkGroup")
