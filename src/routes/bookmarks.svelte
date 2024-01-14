@@ -11,8 +11,7 @@
 			<div class="column is-2">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
-				<div class="card py-4 has-background-bookmark-card" on:click={() => add_bm()}>
-					<!-- Link to URL if active, otherwise do nothing. -->
+				<div class="card py-4 has-background-bookmark-card" on:click={() => addBMarkUser()}>
 					<div class="card-image p-2 is-flex is-justify-content-center">
 						<figure class="image is-48x48">
 							<img class="is-rounded p-1" src="./images/Plus.svg" alt="Bookmark Icon">
@@ -51,86 +50,31 @@
 		{
 			url: 'https://bulma.io',
 			name: 'Bulma'
-		},
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		},
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		},
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		},
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		},
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		},
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		},
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		},
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		},
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		},
+		}
 	];
 
-	function add_bm () {
-		bookmarks.push({
-			url: 'https://google.com',
-			name: 'Google'
-		})
-		bookmarks = bookmarks;
+	async function addBMarkUser () {
+		const json = {
+      username: "wduf",
+      link: "maine.com",
+      linkName: "maine",
+    };
+    const body = JSON.stringify(json);
+    console.log("This is the body, ", body);
+
+    const response = await fetch("/addBmarkUser", {
+      method: "POST",
+      body: body,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const text = await response.text();
+
+    console.log("text:", text);
+
+    return response;
 	}
+
 </script>

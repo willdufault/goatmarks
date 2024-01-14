@@ -72,9 +72,9 @@
 
   async function addBmarkUser() {
     const json = {
-      username: "cfyock",
-      link: "google.com",
-      linkName: "google",
+      username: "wduf",
+      link: "apple.com",
+      linkName: "apple",
     };
     const body = JSON.stringify(json);
     console.log("This is the body, ", body);
