@@ -70,15 +70,16 @@
 
 		const status = response.status;
 		if(status == 200) {
-			const bookmarks_response = await response.json();
+			const bookmarks_response : {}[] = await response.json();
 			let update: any[] = [];
-			console.log(bookmarks_response)
-			// bookmarks_response.array.forEach((element: any) => {
-			// 	update.push({
-			// 		url : element.url,
-			// 		name : element.name
-			// 	})
-			// });
+			for (let i = 0; i < bookmarks_response.length; i++) {
+				let u : String = bookmarks_response[i]['url' as keyof {}]
+				console.log(u)
+				// update.push({
+				// 	url: ,
+				// 	name: bookmarks_response[i].name
+				// });
+			}
 			bookmarks = update;
 			bookmarks = bookmarks;
 			return false;
