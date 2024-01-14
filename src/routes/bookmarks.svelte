@@ -168,7 +168,7 @@
           placeholder="URL"
         />
 
-        <button class="button is-primary" on:click={() => addBMarkUser()}
+        <button class="button is-primary" on:click={async () => await addBMarkUser()}
           >Add Bookmark</button
         >
       </div>

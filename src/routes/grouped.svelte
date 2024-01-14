@@ -1,7 +1,7 @@
 <!-- HTML. -->
 <main class='height-100  rounded-25 no-overflow'>
 	<div class="height-100 has-background-bookmark-container columns is-multiline m-0 scrollable">
-		{#each $group_bookmarks as gr}
+		{#each $group_bookmarks as bm}
 			<div class="column is-4">
 				<Bookmark name={bm.name} url={bm.url} group={true}></Bookmark>
 			</div>
@@ -28,7 +28,7 @@
 		  		<div class="box has-background-bookmark-container is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
 					<input bind:this={gr_nm} class="input my-1" type="text" placeholder="Name" />
 					<input bind:this={gr_url} class="input my-1" type="text" placeholder="URL" />
-					<button class="button is-primary" on:click={() => addBmarkGroup()}>Add Bookmark</button>
+					<button class="button is-primary" on:click={async () => await addBmarkGroup()}>Add Bookmark</button>
 		  		</div>
 			</div>
 			<button class="modal-close is-large" aria-label="close"></button>
