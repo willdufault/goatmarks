@@ -1,8 +1,8 @@
 <!-- HTML. -->
-<main class='height-100 rounded-25 no-overflow'>
-	<div class='height-100 container has-background-bookmark-container p-3 scrollable'>
+<main class='height-100'>
+	<div class='height-100 container has-background-bookmark-container rounded-25'>
 		
-		<div class="columns is-multiline m-0">
+		<div class="columns height-100 is-multiline m-0">
 			{#each bookmarks as bm}
 				<div class="column is-2">
 					<Bookmark name={bm.name} url={bm.url}></Bookmark>
@@ -11,14 +11,11 @@
 			<div class="column is-2">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
-				<div class="card py-4 has-background-bookmark-card" on:click={() => addBMarkUser()}>
+				<div class="card py-4" on:click={() => addBMarkUser()}>
 					<div class="card-image p-2 is-flex is-justify-content-center">
-						<figure class="image is-48x48">
-							<img class="is-rounded p-1" src="./images/Plus.svg" alt="Bookmark Icon">
+						<figure class="image is-48x48 m-3">
+							<img class="plus is-rounded" src="./images/Plus.svg" alt="Bookmark Icon">
 						</figure>
-					</div>
-					<div class="card-content is-flex is-justify-content-center py-0">
-						<p>Add</p>
 					</div>
 				</div>
 			</div>
@@ -30,6 +27,15 @@
 <style>
 	.card {
 		border-radius: 30px;
+		box-shadow: none;
+		background-color: transparent;
+		outline-style: dashed;
+		outline-width: 5px;
+		outline-offset: -5px;
+		outline-color: #88929A;
+	}
+	.plus{
+		filter: invert(66%) sepia(10%) saturate(338%) hue-rotate(164deg) brightness(86%) contrast(85%);
 	}
 </style>
 

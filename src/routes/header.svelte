@@ -9,7 +9,7 @@
 		</a>
 		<button class='invisible-button is-size-2 is-flex js-modal-trigger' data-target="modal-js-example">
 			<h3>{account_name}</h3>
-			<Icon icon="mdi:person" />
+			<Icon icon="fa:user" />
 		</button>
 	</div>
 	
