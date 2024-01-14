@@ -15,14 +15,14 @@
 				</p>
 			</div>
 			{#if $is_in_group}
-				<button class='invisible-button is-size-4 pr-2 is-flex' on:click={leaveRoom}>
+				<button class='invisible-button is-size-4 pr-2 is-flex is-justify-content-center is-align-items-center' on:click={leaveRoom}>
 					<h3 class='subtitle is-6 mb-0 pr-3'>Group: {$group_code}</h3>
 					<div class='is-flex is-size-4'>
 						<Icon icon="mdi:logout" />
 					</div>
 				</button>
 			{:else}
-				<button class='invisible-button is-size-4 pr-2 is-flex js-modal-trigger' data-target="modal-js-example">
+				<button class='invisible-button is-size-4 pr-2 is-flex is-justify-content-center is-align-items-center js-modal-trigger' data-target="modal-js-example">
 					<h3 class='subtitle is-6 mb-0 pr-3'>Join group</h3>
 					<div class='is-flex is-size-4'>
 						<Icon icon="fa:group" />
