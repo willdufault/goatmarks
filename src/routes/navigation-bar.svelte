@@ -132,7 +132,6 @@
 
 			$trigger.addEventListener('click', () => {
 				openModal($target);
-				console.log("nuts")
 			});
 		});
 
