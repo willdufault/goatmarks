@@ -5,13 +5,13 @@
 		<div class="columns height-100 is-multiline m-0">
 			{#each $bookmarks as bm}
 				<div class="column is-2">
-					<Bookmark name={bm.url} url={bm.url}></Bookmark>
+					<Bookmark name={bm.name} url={bm.url}></Bookmark>
 				</div>
 			{/each}
 			<div class="column is-2">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
-				<div class="card py-4" on:click={() => addBMarkUser()}>
+				<div class="card py-4 js-modal-trigger"  data-target="add_bm_modal">
 					<div class="card-image p-2 is-flex is-justify-content-center">
 						<figure class="image is-48x48 m-3">
 							<img class="plus is-rounded" src="./images/Plus.svg" alt="Bookmark Icon">
@@ -20,6 +20,19 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div id="add_bm_modal" class="modal">
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<div class="box has-background-bookmark-container is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
+				<input bind:this={bm_nm} class="input my-1" type="text" placeholder="Name">
+				<input bind:this={bm_url} class="input my-1" type="text" placeholder="URL">
+				
+				<button class="button is-primary" on:click={() => addBMarkUser()}>Add Bookmark</button>
+					
+			</div>
+		</div>
+		<button class="modal-close is-large" aria-label="close"></button>
 	</div>
 </main>
 
@@ -43,19 +56,22 @@
 <script lang='ts'>
 	import { bookmarks, account_name } from '../store';
 	import Bookmark from './bookmark.svelte';
+	import { onMount } from "svelte"
 	interface bookmark {
 		url: string,
 		name: string,
 	}
 	
 	$bookmarks = [] as bookmark[];
+	let bm_url: HTMLInputElement;
+	let bm_nm: HTMLInputElement;
 
 	async function addBMarkUser () {
-		if ($account_name == "") return false;
+		if ($account_name == "" || bm_url.value == "" || bm_nm.value == "") return false;
 		const json = {
 			username: $account_name,
-			link: "maine.com",
-			linkName: "maine",
+			link: bm_url.value,
+			linkName: bm_nm.value,
 		};
 		const body = JSON.stringify(json);
 
@@ -73,7 +89,7 @@
 			let update: bookmark[] = [];
 			for (let i = 0; i < bookmarks_response.length; i++) {
 				let get_url : string = bookmarks_response[i]['url' as keyof {}]
-				let get_name : string = bookmarks_response[i]['url' as keyof {}]
+				let get_name : string = bookmarks_response[i]['name' as keyof {}]
 				update.push({
 					url: get_url,
 					name: get_name
@@ -85,5 +101,48 @@
 			return false;
 		}
 	}
+
+	onMount (() => {
+		function openModal($el : any) {
+			$el.classList.add('is-active');
+		}
+
+		function closeModal($el : any) {
+			$el.classList.remove('is-active');
+		}
+
+		function closeAllModals() {
+			(document.querySelectorAll('.modal') || []).forEach(($modal) => {
+				closeModal($modal);
+			});
+		}
+
+		// Add a click event on buttons to open a specific modal
+		(document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+			const modal_cast = $trigger as HTMLElement;
+			const modal : any = modal_cast.dataset.target;
+			const $target = document.getElementById(modal);
+
+			$trigger.addEventListener('click', () => {
+				openModal($target);
+			});
+		});
+
+		// Add a click event on various child elements to close the parent modal
+		(document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+			const $target = $close.closest('.modal');
+
+			$close.addEventListener('click', () => {
+				closeModal($target);
+			});
+		});
+
+		// Add a keyboard event to close all modals
+		document.addEventListener('keydown', (event) => {
+			if (event.code === 'Escape') {
+				closeAllModals();
+			}
+		});
+	});
 
 </script>
