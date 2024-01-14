@@ -1,26 +1,24 @@
 <!-- HTML. -->
 <main class='height-100 has-background-bookmark-container rounded-25 no-overflow'>
-	<div style={$is_logged_in === true ? "" : "display: none;"}>
-		<div style={$is_in_group === true ? "" : "display: none;"}>
-			<div class="height-100 has-background-bookmark-container columns is-multiline m-0 scrollable">
-				{#each $group_bookmarks as gr}
-					<div class="column is-4">
-						<Bookmark name={gr.name} url={gr.url} group={true}></Bookmark>
-					</div>
-				{/each}
+	<div class="height-100 has-background-bookmark-container columns is-multiline m-0 scrollable">
+		<div style={$is_in_group && $is_logged_in ? "" : "display: none;"}>
+			{#each $group_bookmarks as gr}
 				<div class="column is-4">
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<!-- svelte-ignore a11y-no-static-element-interactions -->
-					<div class="card py-4 js-modal-trigger" data-target="add_gr_modal">
+					<Bookmark name={gr.name} url={gr.url} group={true}></Bookmark>
+				</div>
+			{/each}
+			<div class="column is-4">
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<!-- svelte-ignore a11y-no-static-element-interactions -->
+				<div class="card py-4 js-modal-trigger" data-target="add_gr_modal">
 					<div class="card-image p-2 is-flex is-justify-content-center">
 						<figure class="image is-48x48 m-3">
-						<img
-							class="plus is-rounded"
-							src="./images/Plus.svg"
-							alt="Bookmark Icon"
-						/>
+							<img
+								class="plus is-rounded"
+								src="./images/Plus.svg"
+								alt="Bookmark Icon"
+							/>
 						</figure>
-					</div>
 					</div>
 				</div>
 			</div>
