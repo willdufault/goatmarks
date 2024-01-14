@@ -43,38 +43,41 @@
 		name: string
 	}
 	let bookmarks : bookmark[] = [
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		}
+		
 	];
 
 	async function addBMarkUser () {
 		const json = {
-      username: "wduf",
-      link: "maine.com",
-      linkName: "maine",
-    };
-    const body = JSON.stringify(json);
-    console.log("This is the body, ", body);
+			username: "wduf",
+			link: "maine.com",
+			linkName: "maine",
+		};
+		const body = JSON.stringify(json);
 
-    const response = await fetch("/addBmarkUser", {
-      method: "POST",
-      body: body,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+		const response = await fetch("/addBmarkUser", {
+			method: "POST",
+			body: body,
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
 
-    const text = await response.text();
-
-    console.log("text:", text);
-
-    return response;
+		const status = response.status;
+		if(status == 200) {
+			const bookmarks_response = await response.json();
+			let update: any[] = [];
+			bookmarks_response.array.forEach((element: any) => {
+				update.push({
+					url : element.url,
+					name : element.name
+				})
+			});
+			bookmarks = update;
+			bookmarks = bookmarks;
+			return false;
+		} else {
+			return false;
+		}
 	}
 
 </script>
