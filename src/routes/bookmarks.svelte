@@ -125,7 +125,7 @@
       <div class="columns is-multiline m-0">
         {#each $bookmarks as bm}
           <div class="column is-2">
-            <Bookmark name={bm.name} url={bm.url}></Bookmark>
+            <Bookmark name={bm.name} url={bm.url} group={false}></Bookmark>
           </div>
         {/each}
         <div class="column is-2">
@@ -145,13 +145,9 @@
         </div>
       </div>
     </div>
-    <div style={$is_logged_in === true ? "display: none;" : ""}>
-      <div
-        class="container height-100 mx-4 has-text-centered is-flex is-justify-content-center is-align-items-center"
-      >
-        <h1 class="title is-4">Please log in to view bookmarks.</h1>
-      </div>
-    </div>
+    <div class='container height-100 mx-4 has-text-centered is-flex is-justify-content-center is-align-items-center' style={$is_logged_in ? 'display: none !important' : ''}>
+			<h1 class='title is-4'>Please log in to view bookmarks.</h1>
+		</div>
   </div>
   <div id="add_bm_modal" class="modal">
     <div class="modal-background"></div>

@@ -3,7 +3,7 @@
 	<div class="height-100 has-background-bookmark-container columns is-multiline m-0 scrollable">
 		{#each $group_bookmarks as gr}
 			<div class="column is-4">
-				<Bookmark name={gr.name} url={gr.url}></Bookmark>
+				<Bookmark name={bm.name} url={bm.url} group={true}></Bookmark>
 			</div>
 		{/each}
 		<div class="column is-2">
