@@ -14,27 +14,28 @@
 					</span>
 				</p>
 			</div>
-			{#if $is_logged_in}
-				{#if $is_in_group}
+			<div style="{$is_logged_in === true ? '' : 'display: none;'}">
+				<div style="{$is_in_group === true ? '' : 'display: none;'}">
 					<button class='invisible-button is-size-4 pr-2 is-flex is-justify-content-center is-align-items-center' on:click={leaveRoom}>
 						<h3 class='subtitle is-6 mb-0 pr-3'>Group: {$group_code}</h3>
 						<div class='is-flex is-size-4'>
 							<Icon icon="mdi:logout" />
 						</div>
 					</button>
-				{:else}
-					<button class='invisible-button is-size-4 pr-2 is-flex is-justify-content-center is-align-items-center js-modal-trigger' data-target="modal-js-example">
+				</div>
+				<div style="{$is_in_group === true ? 'display: none;' : ''}">
+					<button class='invisible-button is-size-4 pr-2 is-flex is-justify-content-center is-align-items-center js-modal-trigger' data-target="group_modal">
 						<h3 class='subtitle is-6 mb-0 pr-3'>Join group</h3>
 						<div class='is-flex is-size-4'>
 							<Icon icon="fa:group" />
 						</div>
 					</button>
-				{/if}
-			{/if}
+				</div>
+			</div>
 			<!-- modal or drop down menu for this? -->
 		</div>
 		
-		<div id="modal-js-example" class="modal">
+		<div id="group_modal" class="modal">
 			<div class="modal-background"></div>
 			<div class="modal-content">
 				<div class="box has-background-bookmark-container">
