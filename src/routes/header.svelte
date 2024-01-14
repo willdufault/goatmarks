@@ -16,14 +16,14 @@
 		<div class="modal-background"></div>
 		<div class="modal-content">
 			<div class="box has-background-bookmark-container is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
-				<input class="input my-1" type="text" placeholder="Username">
-				<input class="input my-1" type="text" placeholder="Password">
+				<input bind:this={username} class="input my-1" type="text" placeholder="Username">
+				<input bind:this={password} class="input my-1" type="text" placeholder="Password">
 				<div class="columns is-multiline my-4">
 					<div class="column is-half">
 						<button class="button is-primary">Log In</button>
 					</div>
 					<div class="column is-half">
-						<button class="button is-primary">Create Account</button>
+						<button class="button is-primary" on:click={() => register()}>Create Account</button>
 					</div>
 				</div>	
 			</div>
@@ -63,7 +63,6 @@
 
 			$trigger.addEventListener('click', () => {
 				openModal($target);
-				console.log("nuts")
 			});
 		});
 
@@ -83,4 +82,36 @@
 			}
 		});
 	});
+
+	let username: HTMLInputElement;
+	let password: HTMLInputElement;
+
+	async function register() {
+
+		let user : String = username.value;
+		let pass : String = password.value;
+		
+		if (user == "" || pass == "") return false;
+
+		const json = {
+			username: user,
+			password: pass,
+		};
+		const body = JSON.stringify(json);
+		console.log("This is the body, ", body);
+
+		const response = await fetch("/register", {
+			method: "POST",
+			body: body,
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+
+		const text = await response.text();
+
+		console.log("text:", text);
+
+		return response;
+	}
 </script>
