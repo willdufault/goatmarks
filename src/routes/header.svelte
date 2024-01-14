@@ -8,6 +8,7 @@
 			<h1 class='title is-4'>GoatMarks</h1>
 		</a>
 		<button class='invisible-button is-size-2 is-flex js-modal-trigger' data-target="modal-js-example">
+			<h3>{account_name}</h3>
 			<Icon icon="mdi:person" />
 		</button>
 	</div>
@@ -20,7 +21,7 @@
 				<input bind:this={password} class="input my-1" type="text" placeholder="Password">
 				<div class="columns is-multiline my-4">
 					<div class="column is-half">
-						<button class="button is-primary">Log In</button>
+						<button class="button is-primary" on:click={() => login()}>Log In</button>
 					</div>
 					<div class="column is-half">
 						<button class="button is-primary" on:click={() => register()}>Create Account</button>
@@ -85,6 +86,8 @@
 
 	let username: HTMLInputElement;
 	let password: HTMLInputElement;
+	let account_name = "";
+	let isLoggedIn = false;
 
 	async function register() {
 
@@ -98,7 +101,6 @@
 			password: pass,
 		};
 		const body = JSON.stringify(json);
-		console.log("This is the body, ", body);
 
 		const response = await fetch("/register", {
 			method: "POST",
@@ -113,5 +115,39 @@
 		console.log("text:", text);
 
 		return response;
+	}
+	async function login() {
+		let user : String = username.value;
+		let pass : String = password.value;
+		
+		if (user == "" || pass == "") return false;
+
+		const json = {
+			username: user,
+			password: pass,
+		};
+		const body = JSON.stringify(json);
+		console.log("This is the body, ", body);
+
+		const response = await fetch("/login", {
+			method: "POST",
+			body: body,
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+
+		let status = await response.status;
+		if (status == 200) {
+			const text = await response.text();
+			account_name = text;
+			isLoggedIn = true;
+			account_name = account_name;
+			isLoggedIn = isLoggedIn;
+			return true;
+		} else {
+			console.log(status)
+			return false;
+		}
 	}
 </script>
