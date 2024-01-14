@@ -1,3 +1,11 @@
+<!-- TypeScript. -->
+<script lang="ts">
+  import Bookmarks from "./bookmarks.svelte";
+  import NavigationBar from "./navigation-bar.svelte";
+  import Clock from "./clock.svelte";
+  import Db from "./db.svelte";
+</script>
+
 <!-- HTML. -->
 <main>
 	<Header></Header>
