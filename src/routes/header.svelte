@@ -50,13 +50,14 @@
 
 <!-- TypeScript. -->
 <script lang='ts'>
-	import { account_name, is_logged_in } from '../store';
+	import { account_name, is_logged_in, bookmarks } from '../store';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 
 	function logOut(): void {
 		$account_name = '';
 		$is_logged_in = false;
+		$bookmarks = [];
 	}
 
 	onMount (() => {
@@ -106,6 +107,11 @@
 	let password: HTMLInputElement;
 	$account_name = "";
 	$is_logged_in = false;
+	interface bookmark {
+		url: string,
+		name: string,
+	}
+	$bookmarks = [] as bookmark[];
 
 	async function register() {
 
@@ -160,9 +166,47 @@
 			const text = await response.text();
 			$account_name = text;
 			$is_logged_in = true;
+			getUserByName();
 			return true;
 		} else {
 			console.log(status)
+			return false;
+		}
+	}
+
+	async function getUserByName() {
+		console.log($account_name)
+		const json = {
+			username: $account_name,
+		};
+
+		const body = JSON.stringify(json);
+		console.log("This is the body, ", body);
+
+		const response = await fetch("/getUserByName", {
+			method: "POST",
+			body: body,
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+
+		const status = await response.status;
+		if(status == 200) {
+			const user_response : {}[] = await response.json();
+			let update: bookmark[] = [];
+			let bookmarks_response : {}[] = user_response[0]['bookmarks' as keyof {}]
+			for (let i = 0; i < bookmarks_response.length; i++) {
+				let get_url : string = bookmarks_response[i]['url' as keyof {}]
+				let get_name : string = bookmarks_response[i]['name' as keyof {}]
+				update.push({
+					url: get_url,
+					name: get_name
+				});
+			}
+			$bookmarks = update;
+			return true;
+		} else {
 			return false;
 		}
 	}
