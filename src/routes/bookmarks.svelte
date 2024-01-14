@@ -28,15 +28,25 @@
     if ($account_name == "" || bm_url.value == "" || bm_nm.value == "")
       return false;
 
-    let url: string = validURL(bm_url.value)
-      ? `https://${bm_url.value}`
-      : `https://google.com/search?q=${bm_url.value}`;
+    let url = bm_url.value;
+    if (
+      bm_url.value.startsWith("https://") ||
+      bm_url.value.startsWith("http://")
+    ) {
+      console.log("in if");
+      url = bm_url.value;
+    } else {
+      console.log("in else");
+      url = `https://${bm_url.value}`;
+    }
 
+    console.log(url);
     const json = {
       username: $account_name,
       link: url,
       linkName: bm_nm.value,
     };
+
     const body = JSON.stringify(json);
 
     const response = await fetch("/addBmarkUser", {

@@ -1,39 +1,63 @@
 <!-- HTML. -->
 <main class='height-100  rounded-25 no-overflow'>
-	<div class="height-100 has-background-bookmark-container columns is-multiline m-0 scrollable">
-		{#each $group_bookmarks as bm}
-			<div class="column is-4">
-				<Bookmark name={bm.name} url={bm.url} group={true}></Bookmark>
+	<div style={$is_logged_in === true ? "" : "display: none;"}>
+		<div style={$is_in_group === true ? "" : "display: none;"}>
+			<div class="height-100 has-background-bookmark-container columns is-multiline m-0 scrollable">
+				{#each $group_bookmarks as gr}
+					<div class="column is-4">
+						<Bookmark name={gr.name} url={gr.url} group={true}></Bookmark>
+					</div>
+				{/each}
+				<div class="column is-4">
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<!-- svelte-ignore a11y-no-static-element-interactions -->
+					<div class="card py-4 js-modal-trigger" data-target="add_gr_modal">
+					<div class="card-image p-2 is-flex is-justify-content-center">
+						<figure class="image is-48x48 m-3">
+						<img
+							class="plus is-rounded"
+							src="./images/Plus.svg"
+							alt="Bookmark Icon"
+						/>
+						</figure>
+					</div>
+					</div>
+				</div>
 			</div>
-		{/each}
-		<div class="column is-2">
-			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<div class="card py-4 js-modal-trigger" data-target="add_gr_modal">
-			  <div class="card-image p-2 is-flex is-justify-content-center">
-				<figure class="image is-48x48 m-3">
-				  <img
-					class="plus is-rounded"
-					src="./images/Plus.svg"
-					alt="Bookmark Icon"
-				  />
-				</figure>
-			  </div>
-			</div>
+		</div>
+		<div 
+			class='container height-100 mx-4 has-text-centered is-flex is-justify-content-center is-align-items-center' 
+			style={$is_in_group ? 'display: none !important' : ''}
+		>
+			<h1 class='title is-4'>Please join a group to view group bookmarks.</h1>
 		</div>
 	</div>
 	<div id="add_gr_modal" class="modal">
-		<div class="modal-background">
-			<div class="modal-content">
-		  		<div class="box has-background-bookmark-container is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
-					<input bind:this={gr_nm} class="input my-1" type="text" placeholder="Name" />
-					<input bind:this={gr_url} class="input my-1" type="text" placeholder="URL" />
-					<button class="button is-primary" on:click={async () => await addBmarkGroup()}>Add Bookmark</button>
-		  		</div>
-			</div>
-			<button class="modal-close is-large" aria-label="close"></button>
+		<div class="modal-background"></div>
+		<div class="modal-content">
+		  <div
+			class="box has-background-bookmark-container is-flex is-justify-content-center is-flex-direction-column is-align-items-center"
+		  >
+			<input
+			  bind:this={gr_nm}
+			  class="input my-1"
+			  type="text"
+			  placeholder="Name"
+			/>
+			<input
+			  bind:this={gr_url}
+			  class="input my-1"
+			  type="text"
+			  placeholder="URL"
+			/>
+	
+			<button class="button is-primary" on:click={async () => await addBmarkGroup()}
+			  >Add Bookmark</button
+			>
+		  </div>
 		</div>
-	</div>
+		<button class="modal-close is-large" aria-label="close"></button>
+	  </div>
 </main>
 
 <!-- CSS. -->
@@ -57,7 +81,7 @@
 <!-- TypeScript. -->
 <script lang='ts'>
 	import Bookmark from './bookmark.svelte';
-	import { group_bookmarks, group_code } from '../store';
+	import { group_bookmarks, group_code, is_in_group, is_logged_in } from '../store';
 	import { onMount } from 'svelte';
 
 	interface bookmark {
@@ -90,8 +114,10 @@
 
 		const status = response.status;
 		if (status == 200) {
-			const bookmarks_response: {}[] = await response.json();
+			const group_response : any[] = await response.json();
 			let update: bookmark[] = [];
+			console.log(group_response)
+			let bookmarks_response : {}[] = group_response[1]
 			for (let i = 0; i < bookmarks_response.length; i++) {
 				let get_url: string = bookmarks_response[i]["url" as keyof {}];
 				let get_name: string = bookmarks_response[i]["name" as keyof {}];
