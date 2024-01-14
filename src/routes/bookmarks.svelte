@@ -73,12 +73,12 @@
 			const bookmarks_response : {}[] = await response.json();
 			let update: any[] = [];
 			for (let i = 0; i < bookmarks_response.length; i++) {
-				let u : String = bookmarks_response[i]['url' as keyof {}]
-				console.log(u)
-				// update.push({
-				// 	url: ,
-				// 	name: bookmarks_response[i].name
-				// });
+				let get_url : String = bookmarks_response[i]['url' as keyof {}]
+				let get_name : String = bookmarks_response[i]['url' as keyof {}]
+				update.push({
+					url: get_url,
+					name: get_name
+				});
 			}
 			bookmarks = update;
 			bookmarks = bookmarks;
