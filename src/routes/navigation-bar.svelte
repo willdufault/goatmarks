@@ -41,12 +41,12 @@
 				<div class="box has-background-bookmark-container">
 					<div class="columns is-multiline">
 						<div class="column is-half is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
-							<h1 class="title">Join a group</h1>
 							<input class="input" type="text" placeholder="Group code">
+							<button class="button is-primary">Join group</button>
 						</div>
 						<div class="column is-half is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
-							<h1 class="title">Create a group</h1>
-							<button class="button">Generate group</button>
+							<input bind:this={group_name_input} class="input" type="text" placeholder="Group Name">
+							<button class="button is-primary" on:click={() => createGroup()}>Generate group</button>
 						</div>
 					</div>
 					
@@ -74,14 +74,42 @@
 	import { onMount } from 'svelte';
 	import { is_logged_in, is_in_group, group_code } from '../store';
 
-	let f = () => {}
-
 	// Search bar.
 	let search_input: HTMLInputElement;
+	let group_name_input: HTMLInputElement;
 
 	function leaveRoom(): void {
 		$group_code = '';
 		$is_in_group = false;
+	}
+
+	async function createGroup() {
+
+		if (group_name_input.value == "") return false;
+
+		const json = {
+			name: group_name_input.value,
+		};
+		const body = JSON.stringify(json);
+		console.log("This is the body, ", body);
+
+		const response = await fetch("/createGroup", {
+			method: "POST",
+			body: body,
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+
+		const status = await response.status;
+		if(status == 200) {
+			let group_info : any[] = await response.json();
+			$group_code = group_info[1];
+			$is_in_group = true;
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
