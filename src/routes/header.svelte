@@ -7,10 +7,21 @@
 			</figure>
 			<h1 class='title is-4'>GoatMarks</h1>
 		</a>
-		<button class='invisible-button is-size-2 is-flex js-modal-trigger is-display-flex is-align-items-center' data-target="modal-js-example">
-			<h3 class='subtitle is-5 mb-0 pr-2'>{$account_name}</h3>
-			<Icon icon="fa:user" />
-		</button>
+		{#if $is_logged_in}
+			<button class='invisible-button is-size-2 is-flex is-display-flex is-align-items-center' on:click={logOut}>
+				<h3 class='subtitle is-6 mb-0 pr-3'>{$account_name}</h3>
+				<div class='is-flex is-size-4'>
+					<Icon icon="mdi:logout" />
+				</div>
+			</button>
+		{:else}
+			<button class='invisible-button is-size-2 is-flex js-modal-trigger is-display-flex is-align-items-center' data-target="modal-js-example">
+				<h3 class='subtitle is-6 mb-0 pr-3'>Log in</h3>
+				<div class='is-flex is-size-4'>
+					<Icon icon="fa:user" />
+				</div>
+			</button>
+		{/if}
 	</div>
 	
 	<div id="modal-js-example" class="modal">
@@ -41,6 +52,11 @@
 	import { account_name, is_logged_in } from '../store';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
+
+	function logOut(): void {
+		$account_name = '';
+		$is_logged_in = false;
+	}
 
 	onMount (() => {
 		function openModal($el : any) {
