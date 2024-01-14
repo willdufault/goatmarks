@@ -14,10 +14,21 @@
 					</span>
 				</p>
 			</div>
-			
-			<button class='invisible-button is-size-2 is-flex js-modal-trigger' data-target="modal-js-example">
-				<Icon icon='fa:group' />
-			</button>
+			{#if $is_in_group}
+				<button class='invisible-button is-size-4 pr-2 is-flex' on:click={leaveRoom}>
+					<h3 class='subtitle is-6 mb-0 pr-3'>Group: {$group_code}</h3>
+					<div class='is-flex is-size-4'>
+						<Icon icon="mdi:logout" />
+					</div>
+				</button>
+			{:else}
+				<button class='invisible-button is-size-4 pr-2 is-flex js-modal-trigger' data-target="modal-js-example">
+					<h3 class='subtitle is-6 mb-0 pr-3'>Join group</h3>
+					<div class='is-flex is-size-4'>
+						<Icon icon="fa:group" />
+					</div>
+				</button>
+			{/if}
 			<!-- modal or drop down menu for this? -->
 		</div>
 		
@@ -27,12 +38,12 @@
 				<div class="box has-background-bookmark-container">
 					<div class="columns is-multiline">
 						<div class="column is-half is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
-							<h1 class="title">Join a Room</h1>
-							<input class="input" type="text" placeholder="Room Code">
+							<h1 class="title">Join a group</h1>
+							<input class="input" type="text" placeholder="Group code">
 						</div>
 						<div class="column is-half is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
-							<h1 class="title">Create a Room</h1>
-							<button class="button">Generate Room</button>
+							<h1 class="title">Create a group</h1>
+							<button class="button">Generate group</button>
 						</div>
 					</div>
 					
@@ -58,9 +69,17 @@
 <script lang='ts'>
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
+	import { is_in_group, group_code } from '../store';
+
+	let f = () => {}
 
 	// Search bar.
 	let search_input: HTMLInputElement;
+
+	function leaveRoom(): void {
+		$group_code = '';
+		$is_in_group = false;
+	}
 
 	/*
 	Determine whether a given query is a valid URL.
