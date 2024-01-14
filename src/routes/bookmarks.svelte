@@ -1,8 +1,8 @@
 <!-- HTML. -->
-<main class='height-100 rounded-25 no-overflow'>
-	<div class='height-100 container has-background-bookmark-container p-3 scrollable'>
+<main class='height-100'>
+	<div class='height-100 container has-background-bookmark-container rounded-25'>
 		
-		<div class="columns is-multiline m-0">
+		<div class="columns height-100 is-multiline m-0">
 			{#each bookmarks as bm}
 				<div class="column is-2">
 					<Bookmark name={bm.name} url={bm.url}></Bookmark>
@@ -11,14 +11,11 @@
 			<div class="column is-2">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
-				<div class="card py-4 has-background-bookmark-card" on:click={() => addBMarkUser()}>
+				<div class="card py-4" on:click={() => addBMarkUser()}>
 					<div class="card-image p-2 is-flex is-justify-content-center">
-						<figure class="image is-48x48">
-							<img class="is-rounded p-1" src="./images/Plus.svg" alt="Bookmark Icon">
+						<figure class="image is-48x48 m-3">
+							<img class="plus is-rounded" src="./images/Plus.svg" alt="Bookmark Icon">
 						</figure>
-					</div>
-					<div class="card-content is-flex is-justify-content-center py-0">
-						<p>Add</p>
 					</div>
 				</div>
 			</div>
@@ -30,6 +27,15 @@
 <style>
 	.card {
 		border-radius: 30px;
+		box-shadow: none;
+		background-color: transparent;
+		outline-style: dashed;
+		outline-width: 5px;
+		outline-offset: -5px;
+		outline-color: #88929A;
+	}
+	.plus{
+		filter: invert(66%) sepia(10%) saturate(338%) hue-rotate(164deg) brightness(86%) contrast(85%);
 	}
 </style>
 
@@ -43,38 +49,43 @@
 		name: string
 	}
 	let bookmarks : bookmark[] = [
-		{
-			url: 'https://google.com',
-			name: 'Google'
-		},
-		{
-			url: 'https://bulma.io',
-			name: 'Bulma'
-		}
+		
 	];
 
 	async function addBMarkUser () {
 		const json = {
-      username: "wduf",
-      link: "maine.com",
-      linkName: "maine",
-    };
-    const body = JSON.stringify(json);
-    console.log("This is the body, ", body);
+			username: "wduf",
+			link: "maine.com",
+			linkName: "maine",
+		};
+		const body = JSON.stringify(json);
 
-    const response = await fetch("/addBmarkUser", {
-      method: "POST",
-      body: body,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+		const response = await fetch("/addBmarkUser", {
+			method: "POST",
+			body: body,
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
 
-    const text = await response.text();
-
-    console.log("text:", text);
-
-    return response;
+		const status = response.status;
+		if(status == 200) {
+			const bookmarks_response : {}[] = await response.json();
+			let update: any[] = [];
+			for (let i = 0; i < bookmarks_response.length; i++) {
+				let get_url : String = bookmarks_response[i]['url' as keyof {}]
+				let get_name : String = bookmarks_response[i]['url' as keyof {}]
+				update.push({
+					url: get_url,
+					name: get_name
+				});
+			}
+			bookmarks = update;
+			bookmarks = bookmarks;
+			return false;
+		} else {
+			return false;
+		}
 	}
 
 </script>
