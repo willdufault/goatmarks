@@ -28,9 +28,28 @@
 	<div id="modal-js-example" class="modal">
 		<div class="modal-background"></div>
 		<div class="modal-content">
-			<div class="box has-background-bookmark-container is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
-				<input bind:this={username} class="input my-1" type="text" placeholder="Username">
-				<input bind:this={password} class="input my-1" type="text" placeholder="Password">
+			<div class="box rounded has-background-bookmark-container is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
+				<h1 class="title is-3 mt-4">Log In or Create an Account</h1>
+				<div class="input-fields is-align-self-stretch">
+					<div class="field">
+						<div class="control has-icons-left">
+							<input bind:this={username} class="input" type="text" placeholder="Username">
+							<span class="icon is-small is-left">
+								<Icon icon="fa:user" />
+							</span>
+						</div>
+					</div>
+					<div class="field">
+						<div class="control has-icons-left">
+							<input bind:this={password} class="input" type="text" placeholder="Password">							
+							<span class="icon is-small is-left">
+								<Icon icon="fa:lock" />
+							</span>
+						</div>
+					</div>
+				</div>
+				
+				
 				<div class="columns is-multiline my-4">
 					<div class="column is-half">
 						<button class="button is-primary" on:click={() => login()}>Log In</button>
@@ -46,7 +65,11 @@
 </main>
 
 <!-- CSS. -->
-<style></style>
+<style>
+	.rounded {
+		border-radius: 25px;
+	}
+</style>
 
 <!-- TypeScript. -->
 <script lang='ts'>

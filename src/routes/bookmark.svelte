@@ -12,7 +12,7 @@
 				<p>{name.length <= 8 ? name : `${name.slice(0, 6)}...`}</p>
 			</div>
 		</a>
-		<div class="dropdown is-hoverable">
+		<div class="dropdown is-hoverable p-2">
 			<div class="dropdown-trigger">
 			  <button class="button is-ghost" aria-haspopup="true" aria-controls="dropdown-menu2">
 					<span class="icon is-small">
