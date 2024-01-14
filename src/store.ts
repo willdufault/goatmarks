@@ -11,6 +11,7 @@ interface bookmark {
 }
 
 export let bookmarks = writable([] as bookmark[]);
+export let group_bookmarks = writable([] as bookmark[]);
 
 // count.subscribe((value) => {
 // 	console.log(value);

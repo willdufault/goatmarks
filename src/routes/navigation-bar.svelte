@@ -72,11 +72,17 @@
 <script lang='ts'>
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
-	import { is_logged_in, is_in_group, group_code } from '../store';
+	import { is_logged_in, is_in_group, group_code, group_bookmarks } from '../store';
 
 	// Search bar.
 	let search_input: HTMLInputElement;
 	let group_name_input: HTMLInputElement;
+	
+	interface bookmark {
+		url: string,
+		name: string,
+	}
+	$group_bookmarks = [] as bookmark[];
 
 	function leaveRoom(): void {
 		$group_code = '';
@@ -106,6 +112,43 @@
 			let group_info : any[] = await response.json();
 			$group_code = group_info[1];
 			$is_in_group = true;
+			getGroupByCode();
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	async function getGroupByCode() {
+		const json = {
+			code: $group_code,
+		};
+
+		const body = JSON.stringify(json);
+		console.log("This is the body, ", body);
+
+		const response = await fetch("/getGroupByCode", {
+			method: "POST",
+			body: body,
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+
+		const status = await response.status;
+		if(status == 200) {
+			const user_response : {}[] = await response.json();
+			let update: bookmark[] = [];
+			let bookmarks_response : {}[] = user_response[0]['bookmarks' as keyof {}]
+			for (let i = 0; i < bookmarks_response.length; i++) {
+				let get_url : string = bookmarks_response[i]['url' as keyof {}]
+				let get_name : string = bookmarks_response[i]['name' as keyof {}]
+				update.push({
+					url: get_url,
+					name: get_name
+				});
+			}
+			$group_bookmarks = update;
 			return true;
 		} else {
 			return false;
