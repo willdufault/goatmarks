@@ -15,17 +15,15 @@
 	<div id="modal-js-example" class="modal">
 		<div class="modal-background"></div>
 		<div class="modal-content">
-			<div class="box has-background-bookmark-container">
-				<div class="columns is-multiline">
-					<div class="column is-half is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
-						<h1 class="title">Log In</h1>
-						<input class="input" type="text" placeholder="Username">
-						<input class="input" type="text" placeholder="Password">
+			<div class="box has-background-bookmark-container is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
+				<input class="input my-1" type="text" placeholder="Username">
+				<input class="input my-1" type="text" placeholder="Password">
+				<div class="columns is-multiline my-4">
+					<div class="column is-half">
+						<button class="button is-primary">Log In</button>
 					</div>
-					<div class="column is-half is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
-						<h1 class="title">Create Account</h1>
-						<input class="input" type="text" placeholder="Username">
-						<input class="input" type="text" placeholder="Password">
+					<div class="column is-half">
+						<button class="button is-primary">Create Account</button>
 					</div>
 				</div>	
 			</div>
