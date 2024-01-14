@@ -244,7 +244,7 @@ app.post('/addBmarkGroup', async (req, res) => {
   try {
     if (index.length === 0) {
       console.log("Group does not exist? How are you giving them a bookmark?")
-      res.send(false);
+      res.status(400).send("Group does not exist? How are you giving them a bookmark?");
     } else {
       console.log("Found the user! Adding bookmark to bookmarks array.")
       console.log("This is the link: ", data_string["link"])
@@ -298,14 +298,13 @@ app.post('/addGroupToUser', async (req, res) => {
   console.log("this is the group: ", groupIndex)
   console.log("this is the user: ", userIndex)
 
-
   try {
     if (groupIndex.length === 0 || userIndex === 0) {
       console.log("Group or user does not exist? What are you doing?")
-      res.send(false);
+      res.status(400).send("Group or user does not exist? What are you doing?");
     } else if (userIndex[0]["groups"].some(el => data_string["code"])) {
       console.log("User is already in that group!")
-      res.send(false);
+      res.status(400).send("User is already in that group!");
     } else {
       console.log("Found the user! Adding bookmark to bookmarks array.")
       console.log("This is the code: ", data_string["code"])
@@ -333,7 +332,12 @@ app.post('/addGroupToUser', async (req, res) => {
       }, {
         "multi": true
       })
-      res.send(true);
+
+      let userIndex = await user.find({
+        username: data_string["username"]
+      });
+
+      res.status(200).send([data_string["username"], userIndex[0]["bookmarks"]]);
     }
   } catch (error) {
     console.log("Ran into error in addGroupToUser")
@@ -354,7 +358,7 @@ app.post('/getAllGroups', async (req, res) => {
   console.log("this is the group: ", groupIndex)
 
   try {
-    res.send(groupIndex)
+    res.status(200).send(groupIndex)
   } catch (error) {
     console.log("Ran into error in getAllGroups")
     res.status(500).send(error);
@@ -373,7 +377,7 @@ app.post('/getAllUsers', async (req, res) => {
   console.log("this is the group: ", userIndex)
 
   try {
-    res.send(userIndex)
+    res.status(200).send(userIndex)
   } catch (error) {
     console.log("Ran into error in getAllUsers")
     res.status(500).send(error);
@@ -401,10 +405,10 @@ app.post('/getGroupByCode', async (req, res) => {
   try {
     if (index.length === 0) {
       console.log("Group does not exist? How are you finding them?")
-      res.send(false);
+      res.status(400).send("Group does not exist? How are you finding them?");
     } else {
       console.log("Found the group!")
-      res.send(index);
+      res.status(200).send(index);
     }
   } catch (error) {
     console.log("Ran into error in getGroupByCode")
@@ -425,7 +429,7 @@ app.post('/getUserByName', async (req, res) => {
   console.log(data_string);
 
   let index = await user.find({
-    code: data_string["username"]
+    username: data_string["username"]
   });
 
   console.log("this is the group: ", index)
@@ -433,10 +437,10 @@ app.post('/getUserByName', async (req, res) => {
   try {
     if (index.length === 0) {
       console.log("User does not exist? How are you finding them?")
-      res.send(false);
+      res.status(400).send("User does not exist? How are you finding them?");
     } else {
       console.log("Found the user!")
-      res.send(index);
+      res.status(200).send(index);
     }
   } catch (error) {
     console.log("Ran into error in getUserByCode")
@@ -465,7 +469,7 @@ app.post('/delBmarkUser', async (req, res) => {
   try {
     if (index.length === 0) {
       console.log("User does not exist? How are you finding them?")
-      res.send(false);
+      res.status(400).send("User does not exist? How are you finding them?");
     } else {
       console.log("Found the user!")
 
@@ -481,7 +485,11 @@ app.post('/delBmarkUser', async (req, res) => {
         "multi": true
       })
 
-      res.send(true);
+      let index = await user.find({
+        username: data_string["username"]
+      });
+
+      res.status(200).send([data_string["username"], index[0]["bookmarks"]]);
     }
   } catch (error) {
     console.log("Ran into error in delBmarkUser")
@@ -510,7 +518,7 @@ app.post('/delBmarkGroup', async (req, res) => {
   try {
     if (index.length === 0) {
       console.log("User does not exist? How are you finding them?")
-      res.send(false);
+      res.status(400).send("User does not exist? How are you finding them?");
     } else {
       console.log("Found the user!")
 
@@ -526,7 +534,11 @@ app.post('/delBmarkGroup', async (req, res) => {
         "multi": true
       })
 
-      res.send(true);
+      let index = await group.find({
+        code: data_string["code"]
+      });
+
+      res.status(200).send([data_string["code"], index[0]["bookmarks"]]);
     }
   } catch (error) {
     console.log("Ran into error in delBmarkGroup")
