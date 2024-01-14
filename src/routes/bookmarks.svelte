@@ -131,7 +131,7 @@
   <div
     class="height-100 container has-background-bookmark-container scrollable"
   >
-    <div style={$is_logged_in === true ? "" : "display: none;"}>
+    <div style={$is_logged_in ? "" : "display: none;"}>
       <div class="columns is-multiline m-0">
         {#each $bookmarks as bm}
           <div class="column is-2">

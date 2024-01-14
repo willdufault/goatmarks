@@ -23,7 +23,7 @@
 			<div class="dropdown-menu" id="dropdown-menu2" role="menu">
 			  <div class="dropdown-content has-background-bookmark-card">
 				<div class="dropdown-item">
-					<button class='invisible-button' on:click={async () => {await (group ? delBMarkGroup() : delBmarkUser())}}>
+					<button class='invisible-button' on:click={async () => {group ? await delBMarkGroup() : await delBmarkUser()}}>
 						<p>Delete</p>
 					</button>
 				</div>
@@ -93,7 +93,7 @@
       headers: {
         "Content-Type": "application/json",
       },
-    });
+    });	
     let [user, user_bookmarks] = await response.json();
 
 		// console.log('before:',$bookmarks)
