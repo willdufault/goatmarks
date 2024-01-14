@@ -23,7 +23,7 @@
 			<div class="dropdown-menu" id="dropdown-menu2" role="menu">
 			  <div class="dropdown-content has-background-bookmark-card">
 				<div class="dropdown-item">
-					<button class='invisible-button' on:click={async () => {group ? delBMarkGroup() : delBmarkUser()}}>
+					<button class='invisible-button' on:click={async () => {await (group ? delBMarkGroup() : delBmarkUser())}}>
 						<p>Delete</p>
 					</button>
 				</div>

@@ -51,7 +51,7 @@
 			  placeholder="URL"
 			/>
 	
-			<button class="button is-primary" on:click={() => addBmarkGroup()}
+			<button class="button is-primary" on:click={async () => await addBmarkGroup()}
 			  >Add Bookmark</button
 			>
 		  </div>
