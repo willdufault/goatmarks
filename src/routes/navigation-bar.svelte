@@ -16,7 +16,7 @@
 			</div>
 			
 			<button class='invisible-button is-size-2 is-flex js-modal-trigger' data-target="modal-js-example">
-				<Icon icon='mdi:people' />
+				<Icon icon='fa:group' />
 			</button>
 			<!-- modal or drop down menu for this? -->
 		</div>
