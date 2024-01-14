@@ -41,8 +41,8 @@
 				<div class="box has-background-bookmark-container">
 					<div class="columns is-multiline">
 						<div class="column is-half is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
-							<input class="input" type="text" placeholder="Group code">
-							<button class="button is-primary">Join group</button>
+							<input bind:this={group_join_input} class="input" type="text" placeholder="Group code">
+							<button class="button is-primary" on:click={() => join_group()}>Join group</button>
 						</div>
 						<div class="column is-half is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
 							<input bind:this={group_name_input} class="input" type="text" placeholder="Group Name">
@@ -77,6 +77,7 @@
 	// Search bar.
 	let search_input: HTMLInputElement;
 	let group_name_input: HTMLInputElement;
+	let group_join_input: HTMLInputElement;
 	
 	interface bookmark {
 		url: string,
@@ -87,6 +88,19 @@
 	function leaveRoom(): void {
 		$group_code = '';
 		$is_in_group = false;
+	}
+
+	async function join_group() {
+		$group_code = group_join_input.value;
+		let status : any = getGroupByCode();
+		if(status) {
+			console.log("Group Exists");
+			$is_in_group = true;
+		} else {
+			console.log("Group does not exist");
+			$group_code = '';
+			$is_in_group = false;
+		}
 	}
 
 	async function createGroup() {
