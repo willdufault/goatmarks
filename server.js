@@ -72,20 +72,50 @@ app.post('/register', async (req, res) => {
   let new_user = new user({
     username: data_string["username"],
     password: data_string["password"],
-
   })
 
   try {
     if (index.length === 0) {
       console.log("Username does not exist")
       await new_user.save();
-      res.send(true);
+      res.status(200).send(data_string["username"]);
     } else {
       console.log("Username already exists")
-      res.send(false);
+      res.status(400).send("Username already exists");
     }
   } catch (error) {
     console.log("Ran into error in register")
+    res.status(500).send(error);
+  }
+});
+
+/* 
+Logs in with a username and password
+Checks the user table if the username already exists
+Response is true if the login was successful
+Response is false if the login fails
+Response is status 500 error if the POST request fails 
+*/
+app.post('/login', async (req, res) => {
+  let data_string = req.body;
+  console.log("This is the log in")
+  console.log(data_string);
+
+  let index = await user.find({
+    username: data_string["username"]
+  });
+
+  try {
+    if (index.length === 0) {
+      res.status(400).send("Username does not exist");
+    } else {
+      console.log("Username found")
+      if (index[0]["password"] == data_string["password"]) {
+        res.status(200).send(data_string["username"]);
+      }
+    }
+  } catch (error) {
+    console.log("Ran into error in login")
     res.status(500).send(error);
   }
 });
@@ -125,10 +155,12 @@ app.post('/createGroup', async (req, res) => {
       name: data_string["name"],
       code: rand,
     })
+    console.log("After new group")
 
     await new_group.save();
+    console.log("After new group save")
 
-    res.send(true);
+    res.status(200).send([data_string["name"], rand]);
 
   } catch (error) {
     console.log("Ran into error in createGroup")
@@ -176,7 +208,13 @@ app.post('/addBmarkUser', async (req, res) => {
       }, {
         "multi": true
       })
-      res.send(true);
+
+      let index = await user.find({
+        username: data_string["username"]
+      });
+      console.log(index);
+
+      res.status(200).send(index[0]["bookmarks"]);
     }
   } catch (error) {
     console.log("Ran into error in addBmarkUser")
@@ -224,7 +262,12 @@ app.post('/addBmarkGroup', async (req, res) => {
       }, {
         "multi": true
       })
-      res.send(true);
+
+      let index = await group.find({
+        code: data_string["code"]
+      });
+
+      res.status(200).send([data_string["code"], index[0]["bookmarks"]]);
     }
   } catch (error) {
     console.log("Ran into error in addBmarkGroup")
