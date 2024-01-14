@@ -51,7 +51,9 @@
     src="./images/Background BR.svg"
     alt="beans"
   />
-  <!-- <Db></Db> -->
+  <Db></Db>
+  <Db></Db>
+  <Db></Db>
 </main>
 
 <!-- CSS. -->

@@ -25,6 +25,29 @@
     return response;
   }
 
+  async function login() {
+    const json = {
+      username: "wduf",
+      password: "password",
+    };
+    const body = JSON.stringify(json);
+    console.log("This is the body, ", body);
+
+    const response = await fetch("/login", {
+      method: "POST",
+      body: body,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const text = await response.text();
+
+    console.log("text:", text);
+
+    return response;
+  }
+
   async function createGroup() {
     const json = {
       name: "Beecology",
@@ -253,6 +276,7 @@
   <head> this is the head </head>
   <body>
     <button on:click={register}>Register User Test Button</button>
+    <button on:click={login}>Login User Test Button</button>
     <button on:click={createGroup}>Create Group Test Button</button>
     <button on:click={addBmarkUser}>Add bookmark to user Test Button</button>
     <button on:click={addBmarkGroup}>Add bookmark to group Test Button</button>

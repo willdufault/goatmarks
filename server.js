@@ -72,20 +72,52 @@ app.post('/register', async (req, res) => {
   let new_user = new user({
     username: data_string["username"],
     password: data_string["password"],
-
   })
 
   try {
     if (index.length === 0) {
       console.log("Username does not exist")
       await new_user.save();
-      res.send(true);
+      res.send(data_string["username"]);
     } else {
       console.log("Username already exists")
       res.send(false);
     }
   } catch (error) {
     console.log("Ran into error in register")
+    res.status(500).send(error);
+  }
+});
+
+/* 
+Logs in with a username and password
+Checks the user table if the username already exists
+Response is true if the login was successful
+Response is false if the login fails
+Response is status 500 error if the POST request fails 
+*/
+app.post('/login', async (req, res) => {
+  let data_string = req.body;
+  console.log("This is the log in")
+  console.log(data_string);
+
+  let index = await user.find({
+    username: data_string["username"]
+  });
+
+  try {
+    if (index.length === 0) {
+      console.log("Username does not exist")
+      await new_user.save();
+      res.send(false);
+    } else {
+      console.log("Username found")
+      if (index[0]["password"] == data_string["password"]) {
+        res.send(true);
+      }
+    }
+  } catch (error) {
+    console.log("Ran into error in login")
     res.status(500).send(error);
   }
 });
