@@ -3,9 +3,9 @@
 	<div class='height-100 container has-background-bookmark-container rounded-25'>
 		
 		<div class="columns height-100 is-multiline m-0">
-			{#each bookmarks as bm}
+			{#each $bookmarks as bm}
 				<div class="column is-2">
-					<Bookmark name={bm.name} url={bm.url}></Bookmark>
+					<Bookmark name={bm.url} url={bm.url}></Bookmark>
 				</div>
 			{/each}
 			<div class="column is-2">
@@ -41,20 +41,19 @@
 
 <!-- TypeScript. -->
 <script lang='ts'>
+	import { bookmarks, account_name } from '../store';
 	import Bookmark from './bookmark.svelte';
-	import Icon from '@iconify/svelte';
-	
 	interface bookmark {
 		url: string,
-		name: string
+		name: string,
 	}
-	let bookmarks : bookmark[] = [
-		
-	];
+	
+	$bookmarks = [] as bookmark[];
 
 	async function addBMarkUser () {
+		if ($account_name == "") return false;
 		const json = {
-			username: "wduf",
+			username: $account_name,
 			link: "maine.com",
 			linkName: "maine",
 		};
@@ -71,17 +70,16 @@
 		const status = response.status;
 		if(status == 200) {
 			const bookmarks_response : {}[] = await response.json();
-			let update: any[] = [];
+			let update: bookmark[] = [];
 			for (let i = 0; i < bookmarks_response.length; i++) {
-				let get_url : String = bookmarks_response[i]['url' as keyof {}]
-				let get_name : String = bookmarks_response[i]['url' as keyof {}]
+				let get_url : string = bookmarks_response[i]['url' as keyof {}]
+				let get_name : string = bookmarks_response[i]['url' as keyof {}]
 				update.push({
 					url: get_url,
 					name: get_name
 				});
 			}
-			bookmarks = update;
-			bookmarks = bookmarks;
+			$bookmarks = update;
 			return false;
 		} else {
 			return false;
