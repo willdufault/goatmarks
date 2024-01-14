@@ -70,12 +70,12 @@
 		}
 
 		// Update the time.
-		hours = h;
-		minutes = padMinutes(m);
+		hours = h + 8;
+		minutes = padMinutes(m + 45);
 		seconds = padMinutes(s);
 
 		// Update the date.
-		day = now.getDate();
+		day = now.getDate() + 1;
 		month = months[now.getMonth()];
 		year = now.getFullYear()
 	}
