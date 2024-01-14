@@ -7,8 +7,8 @@
 			</figure>
 			<h1 class='title is-4'>GoatMarks</h1>
 		</a>
-		<button class='invisible-button is-size-2 is-flex js-modal-trigger' data-target="modal-js-example">
-			<h3>{account_name}</h3>
+		<button class='invisible-button is-size-2 is-flex js-modal-trigger is-display-flex is-align-items-center' data-target="modal-js-example">
+			<h3 class='subtitle is-5 mb-0 pr-2'>{$account_name}</h3>
 			<Icon icon="mdi:person" />
 		</button>
 	</div>
@@ -38,6 +38,7 @@
 
 <!-- TypeScript. -->
 <script lang='ts'>
+	import { account_name, is_logged_in } from '../store';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 
@@ -86,8 +87,8 @@
 
 	let username: HTMLInputElement;
 	let password: HTMLInputElement;
-	let account_name = "";
-	let isLoggedIn = false;
+	$account_name = "";
+	$is_logged_in = false;
 
 	async function register() {
 
@@ -140,10 +141,8 @@
 		let status = await response.status;
 		if (status == 200) {
 			const text = await response.text();
-			account_name = text;
-			isLoggedIn = true;
-			account_name = account_name;
-			isLoggedIn = isLoggedIn;
+			$account_name = text;
+			$is_logged_in = true;
 			return true;
 		} else {
 			console.log(status)
