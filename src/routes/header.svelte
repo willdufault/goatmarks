@@ -73,7 +73,7 @@
 
 <!-- TypeScript. -->
 <script lang='ts'>
-	import { account_name, is_logged_in, bookmarks } from '../store';
+	import { account_name, is_logged_in, bookmarks, group_code, is_in_group } from '../store';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 
@@ -81,6 +81,8 @@
 		$account_name = '';
 		$is_logged_in = false;
 		$bookmarks = [];
+		$group_code = '';
+		$is_in_group = false;
 	}
 
 	onMount (() => {
