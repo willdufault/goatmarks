@@ -72,12 +72,13 @@
 		if(status == 200) {
 			const bookmarks_response = await response.json();
 			let update: any[] = [];
-			bookmarks_response.array.forEach((element: any) => {
-				update.push({
-					url : element.url,
-					name : element.name
-				})
-			});
+			console.log(bookmarks_response)
+			// bookmarks_response.array.forEach((element: any) => {
+			// 	update.push({
+			// 		url : element.url,
+			// 		name : element.name
+			// 	})
+			// });
 			bookmarks = update;
 			bookmarks = bookmarks;
 			return false;
