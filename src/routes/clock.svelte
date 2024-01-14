@@ -58,7 +58,7 @@
 		let s: number = now.getSeconds(); // How many seconds.
 
 		// Update the period
-		period = h <= 12 ? 'am' : 'pm';
+		period = h <= 12 ? 'AM' : 'PM';
 
 		// If it is past noon, subtract 12 from the hours.
 		h %= 12;

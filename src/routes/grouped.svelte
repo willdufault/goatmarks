@@ -1,5 +1,5 @@
 <!-- HTML. -->
-<main class='height-100  rounded-25 no-overflow'>
+<main class='height-100 has-background-bookmark-container rounded-25 no-overflow'>
 	<div style={$is_logged_in === true ? "" : "display: none;"}>
 		<div style={$is_in_group === true ? "" : "display: none;"}>
 			<div class="height-100 has-background-bookmark-container columns is-multiline m-0 scrollable">
