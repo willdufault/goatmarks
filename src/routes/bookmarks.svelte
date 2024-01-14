@@ -2,24 +2,30 @@
 <main class='height-100 rounded-25 no-overflow'>
 	<div class='height-100 container has-background-bookmark-container scrollable'>
 		
-		<div class="columns height-100 is-multiline m-0">
-			{#each $bookmarks as bm}
+		{#if $is_logged_in}
+			<div class="columns is-multiline m-0">
+				{#each $bookmarks as bm}
+					<div class="column is-2">
+						<Bookmark name={bm.name} url={bm.url}></Bookmark>
+					</div>
+				{/each}
 				<div class="column is-2">
-					<Bookmark name={bm.name} url={bm.url}></Bookmark>
-				</div>
-			{/each}
-			<div class="column is-2">
-				<!-- svelte-ignore a11y-click-events-have-key-events -->
-				<!-- svelte-ignore a11y-no-static-element-interactions -->
-				<div class="card py-4 js-modal-trigger"  data-target="add_bm_modal">
-					<div class="card-image p-2 is-flex is-justify-content-center">
-						<figure class="image is-48x48 m-3">
-							<img class="plus is-rounded" src="./images/Plus.svg" alt="Bookmark Icon">
-						</figure>
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<!-- svelte-ignore a11y-no-static-element-interactions -->
+					<div class="card py-4 js-modal-trigger"  data-target="add_bm_modal">
+						<div class="card-image p-2 is-flex is-justify-content-center">
+							<figure class="image is-48x48 m-3">
+								<img class="plus is-rounded" src="./images/Plus.svg" alt="Bookmark Icon">
+							</figure>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		{:else}
+			<div class='container height-100 mx-4 has-text-centered is-flex is-justify-content-center is-align-items-center'>
+				<h1 class='title is-4'>Please log in to view bookmarks.</h1>
+			</div>
+		{/if}
 	</div>
 	<div id="add_bm_modal" class="modal">
 		<div class="modal-background"></div>
@@ -57,6 +63,8 @@
 	import { bookmarks, account_name } from '../store';
 	import Bookmark from './bookmark.svelte';
 	import { onMount } from "svelte"
+	import { is_logged_in } from '../store'
+
 	interface bookmark {
 		url: string,
 		name: string,

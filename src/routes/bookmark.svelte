@@ -1,7 +1,7 @@
 <!-- HTML. -->
 <main>
 
-	<div class="card py-4 has-background-bookmark-card">
+	<div class="clickable card py-4 has-background-bookmark-card">
 		<!-- Link to URL if active, otherwise do nothing. -->
 		<a href={url}>
 			<div class="card-image p-2 is-flex is-justify-content-center">
@@ -10,7 +10,7 @@
 				</figure>
 			</div>
 			<div class="card-content is-flex is-justify-content-center py-0">
-				<p>{name}</p>
+				<p>{name.length <= 10 ? name : `${name.slice(0, 7)}...`}</p>
 			</div>
 		</a>
 		<div class="dropdown is-hoverable">
@@ -23,9 +23,6 @@
 			</div>
 			<div class="dropdown-menu" id="dropdown-menu2" role="menu">
 			  <div class="dropdown-content has-background-bookmark-card">
-				<div class="dropdown-item">
-					<p>Edit</p>
-				</div>
 				<div class="dropdown-item">
 					<p>Delete</p>
 				</div>

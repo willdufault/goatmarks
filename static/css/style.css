@@ -57,6 +57,10 @@ input {
 	overflow: hidden;
 }
 
+.clickable {
+	cursor: pointer;
+}
+
 /* Custom scrollbars. */
 /* width */
 ::-webkit-scrollbar {

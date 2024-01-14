@@ -14,20 +14,22 @@
 					</span>
 				</p>
 			</div>
-			{#if $is_in_group}
-				<button class='invisible-button is-size-4 pr-2 is-flex is-justify-content-center is-align-items-center' on:click={leaveRoom}>
-					<h3 class='subtitle is-6 mb-0 pr-3'>Group: {$group_code}</h3>
-					<div class='is-flex is-size-4'>
-						<Icon icon="mdi:logout" />
-					</div>
-				</button>
-			{:else}
-				<button class='invisible-button is-size-4 pr-2 is-flex is-justify-content-center is-align-items-center js-modal-trigger' data-target="modal-js-example">
-					<h3 class='subtitle is-6 mb-0 pr-3'>Join group</h3>
-					<div class='is-flex is-size-4'>
-						<Icon icon="fa:group" />
-					</div>
-				</button>
+			{#if $is_logged_in}
+				{#if $is_in_group}
+					<button class='invisible-button is-size-4 pr-2 is-flex is-justify-content-center is-align-items-center' on:click={leaveRoom}>
+						<h3 class='subtitle is-6 mb-0 pr-3'>Group: {$group_code}</h3>
+						<div class='is-flex is-size-4'>
+							<Icon icon="mdi:logout" />
+						</div>
+					</button>
+				{:else}
+					<button class='invisible-button is-size-4 pr-2 is-flex is-justify-content-center is-align-items-center js-modal-trigger' data-target="modal-js-example">
+						<h3 class='subtitle is-6 mb-0 pr-3'>Join group</h3>
+						<div class='is-flex is-size-4'>
+							<Icon icon="fa:group" />
+						</div>
+					</button>
+				{/if}
 			{/if}
 			<!-- modal or drop down menu for this? -->
 		</div>
@@ -69,7 +71,7 @@
 <script lang='ts'>
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
-	import { is_in_group, group_code } from '../store';
+	import { is_logged_in, is_in_group, group_code } from '../store';
 
 	let f = () => {}
 
